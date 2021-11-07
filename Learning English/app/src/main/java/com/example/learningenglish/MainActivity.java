@@ -20,15 +20,27 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_highscore);
+        setContentView(R.layout.activity_resultcorrectword);
 
-        intitView();
+        //intitView();
         //drawPieChartEnglishQuiz();
-
+        drawPieChartCorrectWord();
     }
 
     private void drawPieChartEnglishQuiz(){
-        pieChartView = findViewById(R.id.chart);
+        pieChartView = findViewById(R.id.ChartEnglishQuiz);
+
+        ArrayList pieData = new ArrayList<>();
+        pieData.add(new SliceValue(9, Color.BLUE));
+        pieData.add(new SliceValue(1, Color.RED));
+
+        PieChartData pieChartData = new PieChartData(pieData);
+        pieChartData.setHasCenterCircle(true).setCenterText1("9/10").setCenterText1FontSize(20).setCenterText1Color(Color.parseColor("#0097A7"));
+        pieChartView.setPieChartData(pieChartData);
+    }
+
+    private void drawPieChartCorrectWord(){
+        pieChartView = findViewById(R.id.ChartCorrectWord);
 
         ArrayList pieData = new ArrayList<>();
         pieData.add(new SliceValue(9, Color.BLUE));
