@@ -6,14 +6,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:background="@color/black">
-    <ImageButton
-        android:id="@+id/BtnBackHighScore"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:src="@drawable/home1"
-        android:backgroundTint="@color/black"
-        android:layout_gravity="right"
-        />
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/TabHighScore"
         android:layout_width="match_parent"

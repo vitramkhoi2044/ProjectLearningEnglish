@@ -65,12 +65,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/TxtPercentCorrectResultCorrectWord"
-            android:text="5"
+            android:text="500"
             android:textStyle="bold"
             android:textSize="40dp"
             android:textColor="@color/black"
             android:layout_alignLeft="@id/Txt1"
-            android:layout_marginLeft="55dp"
+            android:layout_marginLeft="45dp"
             android:layout_marginTop="10dp"
             />
 
@@ -90,7 +90,7 @@
             android:id="@+id/Txt2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Correct Word completed successfully."
+            android:text="Correct word completed successfully."
             android:layout_below="@id/ImgStar"
             android:textSize="19dp"
             android:textStyle="bold"
@@ -121,7 +121,7 @@
         android:textColor="@color/black"
         android:layout_below="@id/BoxView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="20dp"
         />
 
 </RelativeLayout>

@@ -257,6 +257,17 @@
             android:layout_alignBottom="@id/TxtNameEnglishQuizTop5"
             android:layout_marginLeft="50dp"
             />
-
     </RelativeLayout>
+    <Button
+        android:id="@+id/BtnBackHighScoreEnglishQuiz"
+        android:layout_width="150dp"
+        android:layout_height="50dp"
+        android:text="Go Back"
+        android:textSize="20dp"
+        android:textAllCaps="false"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="#DDDDDD"
+        android:textColor="@color/black"
+        />
 </LinearLayout>
