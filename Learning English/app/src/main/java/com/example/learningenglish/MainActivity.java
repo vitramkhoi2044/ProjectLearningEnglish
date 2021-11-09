@@ -20,11 +20,11 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_resultcorrectword);
+        setContentView(R.layout.activity_highscore);
 
-        //intitView();
+        intitView();
         //drawPieChartEnglishQuiz();
-        drawPieChartCorrectWord();
+        //drawPieChartCorrectWord();
     }
 
     private void drawPieChartEnglishQuiz(){
@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         pieData.add(new SliceValue(1, Color.RED));
 
         PieChartData pieChartData = new PieChartData(pieData);
-        pieChartData.setHasCenterCircle(true).setCenterText1("9/10").setCenterText1FontSize(20).setCenterText1Color(Color.parseColor("#0097A7"));
+        pieChartData.setHasCenterCircle(true).setCenterText1("9/10").setCenterText1FontSize(27).setCenterText1Color(Color.parseColor("#000000"));
         pieChartView.setPieChartData(pieChartData);
     }
 
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         pieData.add(new SliceValue(1, Color.RED));
 
         PieChartData pieChartData = new PieChartData(pieData);
-        pieChartData.setHasCenterCircle(true).setCenterText1("9/10").setCenterText1FontSize(20).setCenterText1Color(Color.parseColor("#0097A7"));
+        pieChartData.setHasCenterCircle(true).setCenterText1("9/10").setCenterText1FontSize(27).setCenterText1Color(Color.parseColor("#000000"));
         pieChartView.setPieChartData(pieChartData);
     }
 
