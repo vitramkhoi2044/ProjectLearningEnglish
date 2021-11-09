@@ -5,15 +5,14 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="@color/black">
+    android:background="@drawable/may">
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/TabHighScore"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:tabIndicatorColor="#00BFFF"
-        android:background="@color/black"
         app:tabSelectedTextColor="#00BFFF"
-        app:tabTextColor="@color/white"
+        app:tabTextColor="@color/black"
         app:tabMode="fixed"
         >
     </com.google.android.material.tabs.TabLayout>
