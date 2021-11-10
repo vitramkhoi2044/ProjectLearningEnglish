@@ -1,148 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@drawable/may"
-    tools:layout_editor_absoluteX="9dp"
-    tools:layout_editor_absoluteY="0dp">
+    >
 
     <View
-        android:id="@+id/view4"
+        android:id="@+id/TxtLayoutAbove"
         android:layout_width="wrap_content"
         android:layout_height="120dp"
         android:background="@drawable/background__bottom"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="-2dp" />
 
-    <View
-        android:id="@+id/view3"
-        android:layout_width="339dp"
-        android:layout_height="180dp"
-        android:background="@drawable/quiz_background"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="36dp"
-        tools:layout_editor_absoluteY="58dp" />
+        />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/TxtQuestion"
         android:layout_width="60dp"
         android:layout_height="26dp"
+        android:layout_alignParentRight="true"
         android:fontFamily="@font/roboto_medium"
         android:text="1/10"
         android:textColor="@android:color/white"
         android:textDirection="firstStrong"
-        android:textSize="20sp"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="364dp"
-        tools:layout_editor_absoluteY="6dp" />
+        android:textSize="20dp"
+        android:textAlignment="textEnd"
+        />
 
     <TextView
-        android:id="@+id/textView2"
-        android:layout_width="50dp"
+        android:id="@+id/TxtTimer"
+        android:layout_width="20dp"
         android:layout_height="30dp"
         android:fontFamily="@font/roboto_medium"
-        android:text=" 20"
         android:textAlignment="textStart"
         android:textColor="@android:color/white"
         android:textColorHighlight="@android:color/white"
         android:textColorLink="@android:color/white"
-        android:textSize="20sp"
-        app:drawableTint="@color/white"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="6dp"
-        tools:ignore="MissingConstraints"
-        app:drawableLeftCompat="@android:drawable/ic_lock_idle_alarm" />
+        android:textSize="20dp"
+        app:drawableLeftCompat="@android:drawable/ic_lock_idle_alarm"
+        app:drawableTint="@color/white" />
 
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="340dp"
-        android:layout_height="60dp"
-
-        android:background="@drawable/custom_button"
-        android:fontFamily="@font/roboto_medium"
-        android:paddingStart="20dp"
-        android:text="A. Đây là đáp án A"
-        android:textAlignment="viewStart"
-        android:textAllCaps="false"
-
+    <Chronometer
         android:textColor="@color/white"
-        android:textSize="14sp"
-        tools:ignore="MissingConstraints,DuplicateClickableBoundsCheck"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="284dp" />
+        android:format="20"
+        android:id="@+id/ChronoTimer"
+        android:layout_toRightOf="@+id/TxtTimer"
+        android:layout_width="50dp"
+        android:layout_height="30dp"
+        android:textSize="20dp"
+        android:countDown="true"/>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="340dp"
-        android:layout_height="60dp"
+    <RelativeLayout
+        android:id="@+id/TxtLayoutCenter"
+        android:layout_width="350dp"
+        android:layout_height="200dp"
 
-        android:background="@drawable/custom_button"
-        android:fontFamily="@font/roboto_medium"
-        android:paddingStart="20dp"
-        android:text="B. Day la dap an B"
-        android:textAlignment="viewStart"
-        android:textAllCaps="false"
+        android:layout_marginStart="32dp"
+        android:layout_marginLeft="32dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:background="@drawable/quiz_background">
 
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        tools:ignore="MissingConstraints,DuplicateClickableBoundsCheck"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="364dp" />
+        <ImageView
+            android:id="@+id/TxtQuizImage"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/may" />
+    </RelativeLayout>
 
-    <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="340dp"
-        android:layout_height="60dp"
-
-        android:background="@drawable/custom_button"
-        android:fontFamily="@font/roboto_medium"
-        android:paddingStart="20dp"
-        android:text="C. Day la dap an C"
-        android:textAlignment="viewStart"
-        android:textAllCaps="false"
-
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        tools:ignore="MissingConstraints,DuplicateClickableBoundsCheck"
-        tools:layout_editor_absoluteX="35dp"
-        tools:layout_editor_absoluteY="442dp" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:layout_width="340dp"
-        android:layout_height="60dp"
-
-        android:background="@drawable/custom_button"
-        android:fontFamily="@font/roboto_medium"
-        android:paddingStart="20dp"
-        android:text="D. Day la dap an D"
-        android:textAlignment="viewStart"
-        android:textAllCaps="false"
-
-        android:textColor="@color/white"
-        android:textSize="14sp"
-        tools:ignore="MissingConstraints,DuplicateClickableBoundsCheck"
-        tools:layout_editor_absoluteX="36dp"
-        tools:layout_editor_absoluteY="531dp" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
+    <RadioGroup
+        android:id="@+id/RG_QuizGroup"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="176dp"
-        tools:layout_editor_absoluteY="135dp"
-        tools:ignore="MissingConstraints" />
+        android:layout_below="@id/TxtLayoutCenter">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints,ImageContrastCheck"
-        tools:layout_editor_absoluteX="141dp"
-        tools:layout_editor_absoluteY="81dp"
-        tools:srcCompat="@tools:sample/avatars" />
+        <RadioButton
+            android:id="@+id/RB_AnswerA"
+            android:layout_width="340dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_button"
+            android:buttonTint="@color/white"
+            android:text="A. Đây là đáp án A"
+            android:textColor="@color/white"
+            android:textSize="14dp" />
+
+        <RadioButton
+            android:id="@+id/RB_AnswerB"
+            android:layout_width="340dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_button"
+            android:buttonTint="@color/white"
+            android:text="B. Đây là đáp án B"
+            android:textColor="@color/white"
+            android:textSize="14dp" />
+
+        <RadioButton
+            android:id="@+id/RB_AnswerC"
+            android:layout_width="340dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_button"
+            android:buttonTint="@color/white"
+            android:text="C. Đây là đáp án C"
+            android:textColor="@color/white"
+            android:textSize="14dp" />
+
+        <RadioButton
+            android:id="@+id/RB_AnswerD"
+            android:layout_width="340dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_button"
+            android:buttonTint="@color/white"
+            android:text="D. Đây là đáp án D"
+            android:textColor="@color/white"
+            android:textSize="14dp" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/BtnToSubmit"
+        android:layout_width="160dp"
+        android:layout_height="60dp"
+        android:layout_below="@+id/RG_QuizGroup"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="35dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="@color/black"
+        android:text="SUBMIT"
+        android:textSize="20dp" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+</RelativeLayout>
