@@ -26,6 +26,7 @@
         android:textDirection="firstStrong"
         android:textSize="20dp"
         android:textAlignment="textEnd"
+        android:layout_marginRight="5dp"
         />
 
     <TextView
@@ -39,7 +40,8 @@
         android:textColorLink="@android:color/white"
         android:textSize="20dp"
         app:drawableLeftCompat="@android:drawable/ic_lock_idle_alarm"
-        app:drawableTint="@color/white" />
+        app:drawableTint="@color/white"
+        android:layout_marginLeft="5dp"/>
 
     <Chronometer
         android:textColor="@color/white"
@@ -55,12 +57,8 @@
         android:id="@+id/TxtLayoutCenter"
         android:layout_width="350dp"
         android:layout_height="200dp"
-
-        android:layout_marginStart="32dp"
-        android:layout_marginLeft="32dp"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="50dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginRight="32dp"
         android:background="@drawable/quiz_background">
 
         <ImageView
@@ -75,13 +73,14 @@
         android:id="@+id/RG_QuizGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/TxtLayoutCenter">
+        android:layout_below="@id/TxtLayoutCenter"
+        >
 
         <RadioButton
             android:id="@+id/RB_AnswerA"
             android:layout_width="340dp"
             android:layout_height="60dp"
-            android:layout_marginLeft="35dp"
+            android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_button"
             android:buttonTint="@color/white"
@@ -93,7 +92,7 @@
             android:id="@+id/RB_AnswerB"
             android:layout_width="340dp"
             android:layout_height="60dp"
-            android:layout_marginLeft="35dp"
+            android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_button"
             android:buttonTint="@color/white"
@@ -105,7 +104,7 @@
             android:id="@+id/RB_AnswerC"
             android:layout_width="340dp"
             android:layout_height="60dp"
-            android:layout_marginLeft="35dp"
+            android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_button"
             android:buttonTint="@color/white"
@@ -117,7 +116,7 @@
             android:id="@+id/RB_AnswerD"
             android:layout_width="340dp"
             android:layout_height="60dp"
-            android:layout_marginLeft="35dp"
+            android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_button"
             android:buttonTint="@color/white"

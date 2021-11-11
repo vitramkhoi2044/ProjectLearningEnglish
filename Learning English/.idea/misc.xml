@@ -3,19 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/2131/ProjectLearningEnglish/Learning English/app/src/main/res/drawable/quiz_background.xml" value="0.403125" />
-        <entry key="..\:/2131/ProjectLearningEnglish/Learning English/app/src/main/res/layout/activity_quiz.xml" value="0.2957427536231884" />
-        <entry key="..\:/DoanA/ProjectLearningEnglish/Learning English/app/src/main/res/layout/activity_highscore.xml" value="0.16621376811594202" />
-        <entry key="..\:/DoanA/ProjectLearningEnglish/Learning English/app/src/main/res/layout/activity_highscore_correctword.xml" value="0.16621376811594202" />
-        <entry key="..\:/DoanA/ProjectLearningEnglish/Learning English/app/src/main/res/layout/activity_main.xml" value="0.1337386018237082" />
+        <entry key="..\:/Users/ACER/Desktop/ProjectLearningEnglish/Learning English/app/src/main/res/layout/activity_quiz.xml" value="0.16847826086956522" />
         <entry key="..\:/Users/PC/Desktop/Project Learning English/Learning English/app/src/main/res/drawable/roundborder_highscore.xml" value="0.2203125" />
-        <entry key="..\:/Users/PC/Desktop/Project Learning English/Learning English/app/src/main/res/font/roboto_medium.xml" value="0.1265625" />
         <entry key="..\:/Users/PC/Desktop/Project Learning English/Learning English/app/src/main/res/layout/activity_highscore.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/PC/Desktop/Project Learning English/Learning English/app/src/main/res/layout/activity_highscore_correctword.xml" value="0.22" />
         <entry key="..\:/Users/PC/Desktop/Project Learning English/Learning English/app/src/main/res/layout/activity_highscore_englishquiz.xml" value="0.22" />
         <entry key="..\:/Users/PC/Desktop/Project Learning English/Learning English/app/src/main/res/layout/activity_main.xml" value="0.19010416666666666" />
-        <entry key="..\:/Users/PC/Desktop/Project Learning English/Learning English/app/src/main/res/layout/activity_quiz.xml" value="0.1" />
-        <entry key="..\:/Users/PC/Desktop/Project Learning English/Learning English/app/src/main/res/layout/activity_resultcorrectword.xml" value="0.22" />
+        <entry key="..\:/Users/PC/Desktop/Project Learning English/Learning English/app/src/main/res/layout/activity_resultcorrectword.xml" value="0.18" />
         <entry key="..\:/Users/PC/Desktop/Project Learning English/Learning English/app/src/main/res/layout/activity_resultenglishquiz.xml" value="0.20416666666666666" />
       </map>
     </option>

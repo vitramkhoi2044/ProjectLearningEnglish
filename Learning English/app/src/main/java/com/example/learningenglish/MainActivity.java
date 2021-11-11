@@ -20,9 +20,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_highscore);
+        setContentView(R.layout.activity_quiz);
 
-        intitView();
+        //intitView();
         //drawPieChartEnglishQuiz();
         //drawPieChartCorrectWord();
     }
