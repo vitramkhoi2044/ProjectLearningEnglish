@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_correctwords);
+        setContentView(R.layout.activity_inputname_correctword);
 
         //intitView();
         //drawPieChartEnglishQuiz();
