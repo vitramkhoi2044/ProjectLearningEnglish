@@ -3,8 +3,11 @@ package com.example.learningenglish;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.google.android.material.tabs.TabLayout;
 
@@ -17,15 +20,21 @@ import lecho.lib.hellocharts.view.PieChartView;
 public class MainActivity extends AppCompatActivity {
     private PieChartView pieChartView;
     private ViewPager mViewPager;
+    protected Button bt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_inputname_correctword);
+        setContentView(R.layout.activity_main);
+        bt = (Button)findViewById(R.id.BtnQuiz);
+        bt.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,activity_englishquiz.class);
+                startActivity(intent);
+            }
+        });
 
-        //intitView();
-        //drawPieChartEnglishQuiz();
-        //drawPieChartCorrectWord();
     }
 
     private void drawPieChartEnglishQuiz(){

@@ -133,14 +133,9 @@
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="35dp"
         android:layout_marginTop="20dp"
-        android:backgroundTint="@color/black"
+        android:backgroundTint="@color/white"
         android:text="SUBMIT"
-        android:textSize="20dp" />
-
-
-
-
-
-
+        android:textSize="20dp"
+        />
 
 </RelativeLayout>
