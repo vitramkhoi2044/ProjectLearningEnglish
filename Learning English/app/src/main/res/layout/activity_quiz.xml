@@ -136,6 +136,7 @@
         android:backgroundTint="@color/white"
         android:text="SUBMIT"
         android:textSize="20dp"
+        android:textColor="@color/black"
         />
 
 </RelativeLayout>
