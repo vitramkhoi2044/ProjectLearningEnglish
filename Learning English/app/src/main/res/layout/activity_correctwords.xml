@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -26,13 +23,26 @@
             />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/TxtTotalStar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentRight="true"
-            android:text="1/10"
+            android:textStyle="bold"
+            android:textSize="40dp"
             android:textColor="@color/black"
-            android:textSize="30dp" />
+            android:textAlignment="textEnd"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="50dp"
+            />
+
+        <ImageView
+            android:id="@+id/ImgStar"
+            android:layout_width="42dp"
+            android:layout_height="40dp"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/star"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="6dp"
+            />
 
         <Chronometer
             android:id="@+id/Chrono"
@@ -40,7 +50,7 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/TxtDongho"
             android:countDown="true"
-            android:format="20"
+            android:format="30"
             android:textColor="@color/black"
             android:textSize="30dp" />
 
@@ -69,12 +79,11 @@
 
             <TextView
                 android:id="@+id/TxtQuestion"
-                android:layout_width="300dp"
+                android:layout_width="390dp"
                 android:layout_height="60dp"
                 android:layout_below="@id/TxtCauhoi"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="40dp"
-                android:text="Câu hỏi hiển thị ở đây"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="30dp" />
@@ -101,7 +110,6 @@
             android:layout_below="@id/TxtLayoutCenter"
             android:layout_marginTop="40dp"
             android:layout_toRightOf="@id/TxtTraloi"
-            android:text="điển cầu trả lời"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="30dp"
@@ -121,5 +129,47 @@
             android:textColor="@color/black"
             android:background="@drawable/quiz_background"
             />
+
+        <TextView
+            android:id="@+id/tmpRight"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_below="@id/BtnSubmit"
+            android:layout_marginTop="50dp"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            />
+        <TextView
+            android:id="@+id/tmpWrong"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_below="@id/tmpRight"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            />
+        <TextView
+            android:id="@+id/totalRight"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_below="@id/tmpWrong"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            />
+        <TextView
+            android:id="@+id/totalWrong"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_below="@id/totalRight"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            />
+        <TextView
+            android:id="@+id/Level"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_below="@id/totalWrong"
+            android:textColor="@color/black"
+            android:textSize="20dp"
+            />
     </RelativeLayout>
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

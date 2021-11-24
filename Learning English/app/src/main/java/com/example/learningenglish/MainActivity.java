@@ -26,11 +26,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        bt = (Button)findViewById(R.id.BtnQuiz);
+        bt = (Button)findViewById(R.id.BtnWord);
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,activity_englishquiz.class);
+                Intent intent = new Intent(MainActivity.this,ActivityCorrectWord.class);
                 startActivity(intent);
             }
         });
