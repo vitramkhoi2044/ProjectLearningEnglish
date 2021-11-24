@@ -71,7 +71,6 @@ public class ActivityCorrectWord extends Activity {
         BtnSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                boolean flag = false;
                 String answer = Edt.getText().toString();
                 if(level==1){
                     if(answer.trim().equals(ListLevel1.get(Number1.get(pos1)).key)){
@@ -86,7 +85,6 @@ public class ActivityCorrectWord extends Activity {
                         totalWrong++;
                         tmpRight=0;
                         pos1++;
-                        flag = true;
                     }
                 }
                 else if(level==2){
@@ -103,7 +101,6 @@ public class ActivityCorrectWord extends Activity {
                         tmpRight=0;
                         level--;
                         pos2++;
-                        flag = true;
                     }
                 }
                 else if(level==3){
@@ -120,7 +117,6 @@ public class ActivityCorrectWord extends Activity {
                         tmpRight=0;
                         level--;
                         pos3++;
-                        flag = true;
                     }
                 }
                 else if(level==4){
@@ -137,7 +133,6 @@ public class ActivityCorrectWord extends Activity {
                         tmpRight=0;
                         level--;
                         pos4++;
-                        flag = true;
                     }
                 }else if(level==5){
                     if(answer.trim().equals(ListLevel5.get(Number5.get(pos5)).key)){
@@ -153,7 +148,6 @@ public class ActivityCorrectWord extends Activity {
                         tmpRight=0;
                         level--;
                         pos5++;
-                        flag = true;
                     }
                 }else {
                     if (answer.trim().equals(ListLevel6.get(Number6.get(pos6)).key)) {
@@ -168,7 +162,6 @@ public class ActivityCorrectWord extends Activity {
                         tmpRight = 0;
                         level--;
                         pos6++;
-                        flag = true;
                     }
                 }
 
