@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -19,6 +21,7 @@ public class ActivityResultCorrectWord extends Activity {
 
     private TextView percentCorrect,totalStar;
     private PieChartView pieChartView;
+    private Button BtnBack;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -26,6 +29,7 @@ public class ActivityResultCorrectWord extends Activity {
         setContentView(R.layout.activity_resultcorrectword);
         percentCorrect = (TextView)findViewById(R.id.TxtPercentCorrectResultCorrectWord);
         totalStar = (TextView)findViewById(R.id.TxtTotalStar);
+        BtnBack = (Button)findViewById(R.id.BtnBackResultCorrectWord);
         Intent callerIntent = getIntent();
         Bundle packageFromCaller = callerIntent.getBundleExtra("MyPackage");
         totalStar.setText(packageFromCaller.getInt("totalStar")+"");
@@ -35,6 +39,12 @@ public class ActivityResultCorrectWord extends Activity {
         float percent = (float)correct/total*100;
         percentCorrect.setText((int)percent+"% Correct");
         drawPieChartCorrectWord(correct,wrong,total);
+        BtnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     private void drawPieChartCorrectWord(int dung,int sai,int tong){

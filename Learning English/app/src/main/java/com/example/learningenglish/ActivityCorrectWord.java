@@ -192,6 +192,7 @@ public class ActivityCorrectWord extends Activity {
                         bundle.putInt("totalStar",totalStar);
                         intent.putExtra("MyPackage",bundle);
                         startActivity(intent);
+                        finish();
                     }
                 }
 
