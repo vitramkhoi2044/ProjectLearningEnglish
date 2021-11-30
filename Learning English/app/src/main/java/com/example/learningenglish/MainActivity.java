@@ -20,21 +20,27 @@ import lecho.lib.hellocharts.view.PieChartView;
 public class MainActivity extends AppCompatActivity {
     private PieChartView pieChartView;
     private ViewPager mViewPager;
-    protected Button bt;
+    protected Button BtnWord,BtnBack;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        bt = (Button)findViewById(R.id.BtnWord);
-        bt.setOnClickListener(new View.OnClickListener() {
+        BtnWord = (Button)findViewById(R.id.BtnWord);
+        BtnBack = (Button)findViewById(R.id.BtnBack);
+        BtnWord.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this,ActivityCorrectWord.class);
                 startActivity(intent);
             }
         });
-
+        BtnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     private void drawPieChartEnglishQuiz(){
@@ -46,18 +52,6 @@ public class MainActivity extends AppCompatActivity {
 
         PieChartData pieChartData = new PieChartData(pieData);
         pieChartData.setHasCenterCircle(true).setCenterText1("9/10").setCenterText1FontSize(27).setCenterText1Color(Color.parseColor("#000000"));
-        pieChartView.setPieChartData(pieChartData);
-    }
-
-    private void drawPieChartCorrectWord(){
-        pieChartView = findViewById(R.id.ChartCorrectWord);
-
-        ArrayList pieData = new ArrayList<>();
-        pieData.add(new SliceValue(8, Color.BLUE));
-        pieData.add(new SliceValue(2, Color.RED));
-
-        PieChartData pieChartData = new PieChartData(pieData);
-        pieChartData.setHasCenterCircle(true).setCenterText1("8/10").setCenterText1FontSize(27).setCenterText1Color(Color.parseColor("#000000"));
         pieChartView.setPieChartData(pieChartData);
     }
 

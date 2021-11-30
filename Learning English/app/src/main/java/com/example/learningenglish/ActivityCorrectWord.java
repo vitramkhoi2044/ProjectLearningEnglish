@@ -4,9 +4,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Chronometer;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -28,9 +30,10 @@ public class ActivityCorrectWord extends Activity {
     ArrayList<Integer> Number4 = new ArrayList<>();
     ArrayList<Integer> Number5 = new ArrayList<>();
     ArrayList<Integer> Number6 = new ArrayList<>();
-    TextView TxtQuestion,TxtStar;
+    TextView TxtQuestion,TxtStar,TxtTmpRight,TxtTmpWrong,TxtLevel;
     Button BtnSubmit;
     EditText Edt;
+    Chronometer chronometer;
     int pos1 = 0;
     int pos2 = 0;
     int pos3 = 0;
@@ -44,6 +47,7 @@ public class ActivityCorrectWord extends Activity {
     int totalRight = 0;
     int totalWrong = 0;
     int totalStar = 0;
+    int counter = 30;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -54,6 +58,11 @@ public class ActivityCorrectWord extends Activity {
         BtnSubmit = (Button)findViewById(R.id.BtnSubmit);
         Edt = (EditText)findViewById(R.id.EdtAnswer);
         TxtStar = (TextView)findViewById(R.id.TxtTotalStar);
+        TxtTmpRight = (TextView)findViewById(R.id.TxtTmpRight);
+        TxtTmpWrong = (TextView)findViewById(R.id.TxtTmpWrong);
+        TxtLevel = (TextView)findViewById(R.id.TxtLevel);
+        chronometer = (Chronometer)findViewById(R.id.Chrono);
+
         readDataFromSQLiteLevel1();
         readDataFromSQLiteLevel2();
         readDataFromSQLiteLevel3();
@@ -68,159 +77,31 @@ public class ActivityCorrectWord extends Activity {
         randomNum(ListLevel6,Number6);
         Display(Number3.get(pos3),ListLevel3,Number3.get(pos3));
         TxtStar.setText(""+tmpStar);
-        BtnSubmit.setOnClickListener(new View.OnClickListener() {
+        TxtTmpRight.setText("Correct: "+tmpRight);
+        TxtTmpWrong.setText("Wrong: "+tmpWrong);
+        TxtLevel.setText("Level " +level);
+        chronometer.setText(""+counter);
+        doStart();
+        chronometer.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
             @Override
-            public void onClick(View v) {
-                String answer = Edt.getText().toString();
-                if(level==1){
-                    if(answer.trim().equals(ListLevel1.get(Number1.get(pos1)).key)){
-                        tmpRight++;
-                        totalRight++;
-                        tmpWrong=0;
-                        level++;
-                        pos1++;
-                    }
-                    else{
-                        tmpWrong++;
-                        totalWrong++;
-                        tmpRight=0;
-                        pos1++;
-                    }
+            public void onChronometerTick(Chronometer chronometer) {
+                if(counter<0){
+                    counter = 30;
+                    runCorrectWord();
                 }
-                else if(level==2){
-                    if(answer.trim().equals(ListLevel2.get(Number2.get(pos2)).key)){
-                        tmpRight++;
-                        totalRight++;
-                        tmpWrong=0;
-                        level++;
-                        pos2++;
-                    }
-                    else{
-                        tmpWrong++;
-                        totalWrong++;
-                        tmpRight=0;
-                        level--;
-                        pos2++;
-                    }
+                else{
+                    BtnSubmit.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            doStop();
+                            counter = 30;
+                            runCorrectWord();
+                            doStart();
+                        }
+                    });
+                    chronometer.setText(""+counter);
+                    counter--;
                 }
-                else if(level==3){
-                    if(answer.trim().equals(ListLevel3.get(Number3.get(pos3)).key)){
-                        tmpRight++;
-                        totalRight++;
-                        tmpWrong=0;
-                        level++;
-                        pos3++;
-                    }
-                    else{
-                        tmpWrong++;
-                        totalWrong++;
-                        tmpRight=0;
-                        level--;
-                        pos3++;
-                    }
-                }
-                else if(level==4){
-                    if(answer.trim().equals(ListLevel4.get(Number4.get(pos4)).key)){
-                        tmpRight++;
-                        totalRight++;
-                        tmpWrong=0;
-                        level++;
-                        pos4++;
-                    }
-                    else{
-                        tmpWrong++;
-                        totalWrong++;
-                        tmpRight=0;
-                        level--;
-                        pos4++;
-                    }
-                }else if(level==5){
-                    if(answer.trim().equals(ListLevel5.get(Number5.get(pos5)).key)){
-                        tmpRight++;
-                        totalRight++;
-                        tmpWrong=0;
-                        level++;
-                        pos5++;
-                    }
-                    else{
-                        tmpWrong++;
-                        totalWrong++;
-                        tmpRight=0;
-                        level--;
-                        pos5++;
-                    }
-                }else {
-                    if (answer.trim().equals(ListLevel6.get(Number6.get(pos6)).key)) {
-                        tmpRight++;
-                        totalRight++;
-                        tmpWrong = 0;
-                        pos6++;
-                    }
-                    else {
-                        tmpWrong++;
-                        totalWrong++;
-                        tmpRight = 0;
-                        level--;
-                        pos6++;
-                    }
-                }
-
-                Edt.setText("");
-
-                if(tmpRight==3){
-                    tmpStar++;
-                    totalStar++;
-                    tmpRight=0;
-                }
-                else if(tmpWrong==3){
-                    if(tmpStar!=0){
-                        tmpStar--;
-                        tmpWrong=0;
-                    }
-                    else{
-                        Intent intent = new Intent(ActivityCorrectWord.this,ActivityResultCorrectWord.class);
-                        Bundle bundle = new Bundle();
-                        bundle.putInt("totalCorrect",totalRight);
-                        bundle.putInt("totalWrong",totalWrong);
-                        bundle.putInt("totalStar",totalStar);
-                        intent.putExtra("MyPackage",bundle);
-                        startActivity(intent);
-                        finish();
-                    }
-                }
-
-                if(pos1==Number1.size())
-                    pos1=0;
-                else if (pos2==Number2.size())
-                    pos2=0;
-                else if (pos3==Number3.size())
-                    pos3=0;
-                else if (pos4==Number4.size())
-                    pos4=0;
-                else if (pos5==Number5.size())
-                    pos5=0;
-                else if (pos6==Number6.size())
-                    pos6=0;
-
-                TxtStar.setText(""+tmpStar);
-
-                if(level==1){
-                    Display(Number1.get(pos1),ListLevel1,Number1.get(pos1));
-                }
-                else if(level==2){
-                    Display(Number2.get(pos2),ListLevel2,Number2.get(pos2));
-                }
-                else if(level==3){
-                    Display(Number3.get(pos3),ListLevel3,Number3.get(pos3));
-                }
-                else if(level==4){
-                    Display(Number4.get(pos4),ListLevel4,Number4.get(pos4));
-                }else if(level==5){
-                    Display(Number5.get(pos5),ListLevel5,Number5.get(pos5));
-                }else {
-                    Display(Number6.get(pos6),ListLevel6,Number6.get(pos6));
-                }
-
             }
         });
     }
@@ -371,4 +252,191 @@ public class ActivityCorrectWord extends Activity {
             }
         }
     }
+
+    public void runCorrectWord(){
+        String answer = Edt.getText().toString();
+        if(level==1){
+            if(answer.trim().equals(ListLevel1.get(Number1.get(pos1)).key)){
+                MediaPlayer song = MediaPlayer.create(ActivityCorrectWord.this,R.raw.correct);
+                song.start();
+                tmpRight++;
+                totalRight++;
+                tmpWrong=0;
+                level++;
+                pos1++;
+            }
+            else{
+                MediaPlayer song = MediaPlayer.create(ActivityCorrectWord.this,R.raw.wrong);
+                song.start();
+                tmpWrong++;
+                totalWrong++;
+                tmpRight=0;
+                pos1++;
+            }
+        }
+        else if(level==2){
+            if(answer.trim().equals(ListLevel2.get(Number2.get(pos2)).key)){
+                MediaPlayer song = MediaPlayer.create(ActivityCorrectWord.this,R.raw.correct);
+                song.start();
+                tmpRight++;
+                totalRight++;
+                tmpWrong=0;
+                level++;
+                pos2++;
+            }
+            else{
+                MediaPlayer song = MediaPlayer.create(ActivityCorrectWord.this,R.raw.wrong);
+                song.start();
+                tmpWrong++;
+                totalWrong++;
+                tmpRight=0;
+                level--;
+                pos2++;
+            }
+        }
+        else if(level==3){
+            if(answer.trim().equals(ListLevel3.get(Number3.get(pos3)).key)){
+                MediaPlayer song = MediaPlayer.create(ActivityCorrectWord.this,R.raw.correct);
+                song.start();
+                tmpRight++;
+                totalRight++;
+                tmpWrong=0;
+                level++;
+                pos3++;
+            }
+            else{
+                MediaPlayer song = MediaPlayer.create(ActivityCorrectWord.this,R.raw.wrong);
+                song.start();
+                tmpWrong++;
+                totalWrong++;
+                tmpRight=0;
+                level--;
+                pos3++;
+            }
+        }
+        else if(level==4){
+            if(answer.trim().equals(ListLevel4.get(Number4.get(pos4)).key)){
+                MediaPlayer song = MediaPlayer.create(ActivityCorrectWord.this,R.raw.correct);
+                song.start();
+                tmpRight++;
+                totalRight++;
+                tmpWrong=0;
+                level++;
+                pos4++;
+            }
+            else{
+                MediaPlayer song = MediaPlayer.create(ActivityCorrectWord.this,R.raw.wrong);
+                song.start();
+                tmpWrong++;
+                totalWrong++;
+                tmpRight=0;
+                level--;
+                pos4++;
+            }
+        }else if(level==5){
+            if(answer.trim().equals(ListLevel5.get(Number5.get(pos5)).key)){
+                MediaPlayer song = MediaPlayer.create(ActivityCorrectWord.this,R.raw.correct);
+                song.start();
+                tmpRight++;
+                totalRight++;
+                tmpWrong=0;
+                level++;
+                pos5++;
+            }
+            else{
+                MediaPlayer song = MediaPlayer.create(ActivityCorrectWord.this,R.raw.wrong);
+                song.start();
+                tmpWrong++;
+                totalWrong++;
+                tmpRight=0;
+                level--;
+                pos5++;
+            }
+        }else {
+            if (answer.trim().equals(ListLevel6.get(Number6.get(pos6)).key)) {
+                MediaPlayer song = MediaPlayer.create(ActivityCorrectWord.this,R.raw.correct);
+                song.start();
+                tmpRight++;
+                totalRight++;
+                tmpWrong = 0;
+                pos6++;
+            }
+            else {
+                MediaPlayer song = MediaPlayer.create(ActivityCorrectWord.this,R.raw.wrong);
+                song.start();
+                tmpWrong++;
+                totalWrong++;
+                tmpRight = 0;
+                level--;
+                pos6++;
+            }
+        }
+
+        Edt.setText("");
+
+        if(tmpRight==3){
+            tmpStar++;
+            totalStar++;
+            tmpRight=0;
+        }
+        else if(tmpWrong==3){
+            if(tmpStar!=0){
+                tmpStar--;
+                tmpWrong=0;
+            }
+            else{
+                Intent intent = new Intent(ActivityCorrectWord.this,ActivityResultCorrectWord.class);
+                Bundle bundle = new Bundle();
+                bundle.putInt("totalCorrect",totalRight);
+                bundle.putInt("totalWrong",totalWrong);
+                bundle.putInt("totalStar",totalStar);
+                intent.putExtra("MyPackage",bundle);
+                startActivity(intent);
+                finish();
+            }
+        }
+
+        if(pos1==Number1.size())
+            pos1=0;
+        else if (pos2==Number2.size())
+            pos2=0;
+        else if (pos3==Number3.size())
+            pos3=0;
+        else if (pos4==Number4.size())
+            pos4=0;
+        else if (pos5==Number5.size())
+            pos5=0;
+        else if (pos6==Number6.size())
+            pos6=0;
+
+        TxtStar.setText(""+tmpStar);
+        TxtTmpRight.setText("Correct: "+tmpRight);
+        TxtTmpWrong.setText("Wrong: "+tmpWrong);
+        TxtLevel.setText("Level " +level);
+
+        if(level==1){
+            Display(Number1.get(pos1),ListLevel1,Number1.get(pos1));
+        }
+        else if(level==2){
+            Display(Number2.get(pos2),ListLevel2,Number2.get(pos2));
+        }
+        else if(level==3){
+            Display(Number3.get(pos3),ListLevel3,Number3.get(pos3));
+        }
+        else if(level==4){
+            Display(Number4.get(pos4),ListLevel4,Number4.get(pos4));
+        }else if(level==5){
+            Display(Number5.get(pos5),ListLevel5,Number5.get(pos5));
+        }else {
+            Display(Number6.get(pos6),ListLevel6,Number6.get(pos6));
+        }
+    }
+
+    public void doStart(){
+        chronometer.start();
+    }
+    public void doStop(){
+        chronometer.stop();
+    }
+
 }

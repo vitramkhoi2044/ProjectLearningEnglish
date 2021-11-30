@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -8,19 +9,12 @@
         android:layout_height="match_parent"
         android:background="@drawable/may">
 
-        <TextView
+        <ImageView
             android:id="@+id/TxtDongho"
-            android:layout_width="20dp"
+            android:layout_width="30dp"
             android:layout_height="30dp"
-            app:drawableLeftCompat="@android:drawable/ic_lock_idle_alarm"
-            android:textAlignment="textStart"
-            android:textColor="@android:color/white"
-            android:textColorHighlight="@android:color/white"
-            android:textColorLink="@android:color/white"
-            android:textSize="25dp"
-            app:drawableTint="@color/black"
-            android:layout_alignBaseline="@id/Chrono"
-            />
+            android:layout_marginTop="5dp"
+            android:src="@drawable/timer" />
 
         <TextView
             android:id="@+id/TxtTotalStar"
@@ -50,9 +44,10 @@
             android:layout_height="wrap_content"
             android:layout_toRightOf="@id/TxtDongho"
             android:countDown="true"
-            android:format="30"
+            android:format=""
             android:textColor="@color/black"
-            android:textSize="30dp" />
+            android:textSize="30dp"
+            android:layout_marginLeft="3dp"/>
 
 
         <RelativeLayout
@@ -66,27 +61,48 @@
             >
 
             <TextView
-                android:id="@+id/TxtCauhoi"
-                android:layout_width="200dp"
-                android:layout_height="50dp"
-                android:layout_centerHorizontal="true"
-                android:text="Câu Hỏi"
-                android:textAlignment="center"
+                android:id="@+id/TxtLevel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:textSize="30dp"
-                android:layout_marginTop="20dp"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                android:layout_marginTop="10dp"
                 />
 
             <TextView
                 android:id="@+id/TxtQuestion"
                 android:layout_width="390dp"
                 android:layout_height="60dp"
-                android:layout_below="@id/TxtCauhoi"
-                android:layout_centerHorizontal="true"
-                android:layout_marginTop="40dp"
+                android:layout_centerVertical="true"
                 android:textAlignment="center"
                 android:textColor="@color/white"
                 android:textSize="30dp" />
+
+            <TextView
+                android:id="@+id/TxtTmpRight"
+                android:layout_width="150dp"
+                android:layout_height="25dp"
+                android:layout_below="@id/TxtQuestion"
+                android:layout_marginTop="50dp"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                android:layout_marginLeft="20dp"
+                />
+
+            <TextView
+                android:id="@+id/TxtTmpWrong"
+                android:layout_width="150dp"
+                android:layout_height="25dp"
+                android:layout_alignBottom="@id/TxtTmpRight"
+                android:layout_toRightOf="@id/TxtTmpRight"
+                android:layout_marginTop="50dp"
+                android:textColor="@color/white"
+                android:textAlignment="textEnd"
+                android:textSize="20dp"
+                android:layout_marginLeft="55dp"
+                />
 
         </RelativeLayout>
 
@@ -97,10 +113,11 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/TxtLayoutCenter"
             android:layout_alignBaseline="@id/EdtAnswer"
-            android:layout_marginLeft="15dp"
-            android:text="Trả lời:"
+            android:layout_marginLeft="10dp"
+            android:text="Answer:"
+            android:textAlignment="textStart"
             android:textColor="@color/black"
-            android:textSize="30dp"
+            android:textSize="27dp"
             android:textStyle="bold" />
 
         <EditText
@@ -119,57 +136,14 @@
 
         <Button
             android:id="@+id/BtnSubmit"
-            android:layout_width="200dp"
-            android:layout_height="50dp"
+            android:layout_width="170dp"
+            android:layout_height="70dp"
             android:layout_below="@id/EdtAnswer"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="30dp"
-            android:backgroundTint="#106ECC"
+            android:backgroundTint="#023246"
             android:text="Submit"
-            android:textColor="@color/black"
-            android:background="@drawable/quiz_background"
-            />
-
-        <TextView
-            android:id="@+id/tmpRight"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:layout_below="@id/BtnSubmit"
-            android:layout_marginTop="50dp"
-            android:textColor="@color/black"
             android:textSize="20dp"
-            />
-        <TextView
-            android:id="@+id/tmpWrong"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:layout_below="@id/tmpRight"
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            />
-        <TextView
-            android:id="@+id/totalRight"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:layout_below="@id/tmpWrong"
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            />
-        <TextView
-            android:id="@+id/totalWrong"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:layout_below="@id/totalRight"
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            />
-        <TextView
-            android:id="@+id/Level"
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:layout_below="@id/totalWrong"
-            android:textColor="@color/black"
-            android:textSize="20dp"
-            />
+            android:textColor="@color/white" />
     </RelativeLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
