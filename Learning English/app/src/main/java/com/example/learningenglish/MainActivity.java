@@ -1,27 +1,26 @@
 package com.example.learningenglish;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
-<<<<<<< HEAD
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-=======
+
 import android.content.Intent;
->>>>>>> 4e002f9328960db898fe4d4fff41f4793b7956ec
+
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-<<<<<<< HEAD
+
 import android.widget.TextView;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
-=======
 
->>>>>>> 4e002f9328960db898fe4d4fff41f4793b7956ec
 
 import java.util.ArrayList;
 
@@ -30,24 +29,24 @@ import lecho.lib.hellocharts.model.SliceValue;
 import lecho.lib.hellocharts.view.PieChartView;
 
 public class MainActivity extends AppCompatActivity {
-    protected Button BT1, LOGOUT;
+    protected Button EnterEnglishQuiz, LOGOUT;
     private PieChartView pieChartView;
-<<<<<<< HEAD
-    private ViewPager mViewPager;
+
+
     TextView displayUserName;
     String username;
-=======
+
     private Button BtnWord,BtnBack,BtnHighScore;
 
->>>>>>> 4e002f9328960db898fe4d4fff41f4793b7956ec
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-<<<<<<< HEAD
+
 
         setContentView(R.layout.activity_main);
-        BT1 = (Button)findViewById(R.id.BtnQuiz);
+        EnterEnglishQuiz = (Button)findViewById(R.id.BtnEnglishQuiz);
         LOGOUT = (Button)findViewById((R.id.BtnToLogin));
 //        Intent callerIntent=getIntent();
 //        Bundle packageFromCaller= callerIntent.getBundleExtra("loginExtra");
@@ -58,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
         displayUserName = findViewById((R.id.TextUserName));
         displayUserName.setText("Hi" + " " + username);
 
-        BT1.setOnClickListener(new View.OnClickListener() {
+        EnterEnglishQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, activity_nhap.class);
@@ -76,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-=======
+
         setContentView(R.layout.activity_main);
         BtnWord = (Button)findViewById(R.id.BtnWord);
         BtnHighScore = (Button)findViewById(R.id.BtnHighscore);
@@ -101,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
                 finish();
             }
         });
->>>>>>> 4e002f9328960db898fe4d4fff41f4793b7956ec
+
     }
 
     private void drawPieChartEnglishQuiz(){

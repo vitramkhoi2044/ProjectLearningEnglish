@@ -33,7 +33,7 @@
             />
 
         <Button
-            android:id="@+id/BtnQuiz"
+            android:id="@+id/BtnEnglishQuiz"
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_below="@id/ImgTest"
@@ -52,7 +52,7 @@
             android:layout_below="@id/ImgTest"
             android:layout_marginLeft="50dp"
             android:layout_marginTop="20dp"
-            android:layout_toRightOf="@id/BtnQuiz"
+            android:layout_toRightOf="@id/BtnEnglishQuiz"
             android:backgroundTint="@color/white"
             android:text="Correct Words"
             android:textColor="@color/black"
@@ -63,7 +63,7 @@
             android:id="@+id/BtnHighscore"
             android:layout_width="150dp"
             android:layout_height="150dp"
-            android:layout_below="@id/BtnQuiz"
+            android:layout_below="@id/BtnEnglishQuiz"
             android:layout_marginLeft="30dp"
             android:layout_marginTop="20dp"
             android:backgroundTint="@color/white"
