@@ -31,14 +31,9 @@ import lecho.lib.hellocharts.view.PieChartView;
 public class MainActivity extends AppCompatActivity {
     protected Button EnterEnglishQuiz, LOGOUT;
     private PieChartView pieChartView;
-
-
     TextView displayUserName;
     String username;
-
     private Button BtnWord,BtnBack,BtnHighScore;
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
@@ -76,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        setContentView(R.layout.activity_main);
+      
         BtnWord = (Button)findViewById(R.id.BtnWord);
         BtnHighScore = (Button)findViewById(R.id.BtnHighscore);
         BtnBack = (Button)findViewById(R.id.BtnBack);
