@@ -1,7 +1,6 @@
 package com.example.learningenglish;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -9,7 +8,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 
@@ -19,19 +17,26 @@ import lecho.lib.hellocharts.view.PieChartView;
 
 public class MainActivity extends AppCompatActivity {
     private PieChartView pieChartView;
-    private ViewPager mViewPager;
-    protected Button BtnWord,BtnBack;
+    private Button BtnWord,BtnBack,BtnHighScore;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         BtnWord = (Button)findViewById(R.id.BtnWord);
+        BtnHighScore = (Button)findViewById(R.id.BtnHighscore);
         BtnBack = (Button)findViewById(R.id.BtnBack);
         BtnWord.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,ActivityCorrectWord.class);
+                Intent intent = new Intent(MainActivity.this,ActivityInputCorrectWord.class);
+                startActivity(intent);
+            }
+        });
+        BtnHighScore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,ActivityHighScore.class);
                 startActivity(intent);
             }
         });
@@ -55,10 +60,5 @@ public class MainActivity extends AppCompatActivity {
         pieChartView.setPieChartData(pieChartData);
     }
 
-    private void intitView(){
-        mViewPager = (ViewPager)findViewById(R.id.ViewPagerHighScore);
-        mViewPager.setAdapter(new Adapter_HighScore(getSupportFragmentManager()));
-        TabLayout tabLayout = (TabLayout)findViewById(R.id.TabHighScore);
-        tabLayout.setupWithViewPager(mViewPager);
-    }
+
 }

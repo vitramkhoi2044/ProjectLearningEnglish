@@ -17,7 +17,7 @@
             android:layout_height="50dp"
             android:text="Learning English"
             android:layout_marginTop="30dp"
-            android:textSize="30sp"
+            android:textSize="30dp"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:layout_centerHorizontal="true"
@@ -38,9 +38,9 @@
             android:layout_height="150dp"
             android:layout_below="@id/ImgTest"
             android:layout_marginTop="20dp"
-            android:layout_marginLeft="60dp"
+            android:layout_marginLeft="30dp"
             android:text="Quiz"
-            android:textSize="20sp"
+            android:textSize="20dp"
             android:backgroundTint="@color/white"
             android:textColor="@color/black"
             />
@@ -50,13 +50,13 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_below="@id/ImgTest"
-            android:layout_marginLeft="60dp"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="20dp"
             android:layout_toRightOf="@id/BtnQuiz"
             android:backgroundTint="@color/white"
             android:text="Correct Words"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="20dp"
             />
 
         <Button
@@ -64,12 +64,12 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_below="@id/BtnQuiz"
-            android:layout_marginLeft="60dp"
+            android:layout_marginLeft="30dp"
             android:layout_marginTop="20dp"
             android:backgroundTint="@color/white"
             android:text="High Score"
             android:textColor="@color/black"
-            android:textSize="20sp"
+            android:textSize="20dp"
             />
 
         <Button
@@ -77,11 +77,11 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_below="@id/BtnWord"
-            android:layout_marginLeft="60dp"
+            android:layout_marginLeft="50dp"
             android:layout_marginTop="20dp"
             android:layout_toRightOf="@id/BtnHighscore"
             android:text="Back"
-            android:textSize="20sp"
+            android:textSize="20dp"
             android:textColor="@color/black"
             android:backgroundTint="@color/white"
             />

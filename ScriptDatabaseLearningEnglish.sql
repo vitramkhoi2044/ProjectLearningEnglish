@@ -113,7 +113,7 @@ Insert into "CorrectWord"(ID,Word,Key,Level)VALUES(59,"c o d e","code",3);
 Insert into "CorrectWord"(ID,Word,Key,Level)VALUES(60,"d e c a d e","decade",3);
 Insert into "CorrectWord"(ID,Word,Key,Level)VALUES(61,"g a m e","game",3);
 Insert into "CorrectWord"(ID,Word,Key,Level)VALUES(62,"s o c c e r","soccer",3);
-Insert into "CorrectWord"(ID,Word,Key,Level)VALUES(63,"v o l e y b a l l","voleyball",3);
+Insert into "CorrectWord"(ID,Word,Key,Level)VALUES(63,"v o l l e y b a l l","volleyball",3);
 Insert into "CorrectWord"(ID,Word,Key,Level)VALUES(64,"a c c u r a t e","accurate",4);
 Insert into "CorrectWord"(ID,Word,Key,Level)VALUES(65,"c o n v i n c e","convince",4);
 Insert into "CorrectWord"(ID,Word,Key,Level)VALUES(66,"c u r r e n c y","currency",4);
@@ -151,3 +151,15 @@ Insert into "CorrectWord"(ID,Word,Key,Level)VALUES(97,"r e s p o n s i b i l i t
 Insert into "CorrectWord"(ID,Word,Key,Level)VALUES(98,"t r a n s p o r t a t i o n","transportation",6);
 Insert into "CorrectWord"(ID,Word,Key,Level)VALUES(99,"a c k n o w l e d g e m e n t","acknowledgement",6);
 Insert into "CorrectWord"(ID,Word,Key,Level)VALUES(100,"s p e c i a l i z a t i o n","specialization",6);
+--Insert HighScoreCorrectWord
+Insert into "HighScoreCorrectWord"(Top,Name,Star)VALUES(1,"Your Name1",0);
+Insert into "HighScoreCorrectWord"(Top,Name,Star)VALUES(2,"Your Name2",0);
+Insert into "HighScoreCorrectWord"(Top,Name,Star)VALUES(3,"Your Name3",0);
+Insert into "HighScoreCorrectWord"(Top,Name,Star)VALUES(4,"Your Name4",0);
+Insert into "HighScoreCorrectWord"(Top,Name,Star)VALUES(5,"Your Name5",0);
+--Insert HighScoreCorrectWord
+Insert into "HighScoreEnglishQuiz"(Top,Name,Score)VALUES(1,"Your Name1",0);
+Insert into "HighScoreEnglishQuiz"(Top,Name,Score)VALUES(2,"Your Name2",0);
+Insert into "HighScoreEnglishQuiz"(Top,Name,Score)VALUES(3,"Your Name3",0);
+Insert into "HighScoreEnglishQuiz"(Top,Name,Score)VALUES(4,"Your Name4",0);
+Insert into "HighScoreEnglishQuiz"(Top,Name,Score)VALUES(5,"Your Name5",0);

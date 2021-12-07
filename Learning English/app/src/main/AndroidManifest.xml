@@ -20,6 +20,11 @@
         </activity>
         <activity android:name=".ActivityCorrectWord"/>
         <activity android:name=".ActivityResultCorrectWord"/>
+        <activity android:name=".ActivityInputCorrectWord"/>
+        <activity android:name=".ActivityHighScore"/>
+        <activity android:name=".ActivityHighScoreCorrectWord"/>
+        <activity android:name=".ActivityHighScoreEnglishQuiz"/>
+
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
