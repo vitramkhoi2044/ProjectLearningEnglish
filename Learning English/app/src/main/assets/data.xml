@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<Questionare>
+    <Item>
+        <ID>1</ID>
+        <Question>We have two ….. We see with them.</Question>
+        <AnswerA>eyes</AnswerA>
+        <AnswerB>legs</AnswerB>
+        <AnswerC>hands</AnswerC>
+        <AnswerD>ears</AnswerD>
+        <Answer>A</Answer>
+    </Item>
+    <Item>
+        <ID>2</ID>
+        <Question>There ..... many books on the table.</Question>
+        <AnswerA>is</AnswerA>
+        <AnswerB>have</AnswerB>
+        <AnswerC>are</AnswerC>
+        <AnswerD>has</AnswerD>
+        <Answer>C</Answer>
+    </Item>
+
+
+
+</Questionare>
