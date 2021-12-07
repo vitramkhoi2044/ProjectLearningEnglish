@@ -1,20 +1,27 @@
 package com.example.learningenglish;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
 
+<<<<<<< HEAD
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+=======
+import android.content.Intent;
+>>>>>>> 4e002f9328960db898fe4d4fff41f4793b7956ec
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+<<<<<<< HEAD
 import android.widget.TextView;
 
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
+=======
+
+>>>>>>> 4e002f9328960db898fe4d4fff41f4793b7956ec
 
 import java.util.ArrayList;
 
@@ -25,13 +32,19 @@ import lecho.lib.hellocharts.view.PieChartView;
 public class MainActivity extends AppCompatActivity {
     protected Button BT1, LOGOUT;
     private PieChartView pieChartView;
+<<<<<<< HEAD
     private ViewPager mViewPager;
     TextView displayUserName;
     String username;
+=======
+    private Button BtnWord,BtnBack,BtnHighScore;
+
+>>>>>>> 4e002f9328960db898fe4d4fff41f4793b7956ec
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+<<<<<<< HEAD
 
         setContentView(R.layout.activity_main);
         BT1 = (Button)findViewById(R.id.BtnQuiz);
@@ -63,6 +76,32 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+=======
+        setContentView(R.layout.activity_main);
+        BtnWord = (Button)findViewById(R.id.BtnWord);
+        BtnHighScore = (Button)findViewById(R.id.BtnHighscore);
+        BtnBack = (Button)findViewById(R.id.BtnBack);
+        BtnWord.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,ActivityInputCorrectWord.class);
+                startActivity(intent);
+            }
+        });
+        BtnHighScore.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this,ActivityHighScore.class);
+                startActivity(intent);
+            }
+        });
+        BtnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+>>>>>>> 4e002f9328960db898fe4d4fff41f4793b7956ec
     }
 
     private void drawPieChartEnglishQuiz(){
@@ -77,22 +116,5 @@ public class MainActivity extends AppCompatActivity {
         pieChartView.setPieChartData(pieChartData);
     }
 
-    private void drawPieChartCorrectWord(){
-        pieChartView = findViewById(R.id.ChartCorrectWord);
 
-        ArrayList pieData = new ArrayList<>();
-        pieData.add(new SliceValue(8, Color.BLUE));
-        pieData.add(new SliceValue(2, Color.RED));
-
-        PieChartData pieChartData = new PieChartData(pieData);
-        pieChartData.setHasCenterCircle(true).setCenterText1("8/10").setCenterText1FontSize(27).setCenterText1Color(Color.parseColor("#000000"));
-        pieChartView.setPieChartData(pieChartData);
-    }
-
-    private void intitView(){
-        mViewPager = (ViewPager)findViewById(R.id.ViewPagerHighScore);
-        mViewPager.setAdapter(new Adapter_HighScore(getSupportFragmentManager()));
-        TabLayout tabLayout = (TabLayout)findViewById(R.id.TabHighScore);
-        tabLayout.setupWithViewPager(mViewPager);
-    }
 }

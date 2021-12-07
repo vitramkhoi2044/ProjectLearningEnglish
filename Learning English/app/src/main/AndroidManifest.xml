@@ -31,9 +31,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<<<<<<< HEAD
         <activity android:name=".activity_EnglishQuiz" />
         <activity android:name=".activity_ResultEnglishQuiz" />
         <activity android:name=".activity_nhap" />
+=======
+        <activity android:name=".ActivityCorrectWord"/>
+        <activity android:name=".ActivityResultCorrectWord"/>
+        <activity android:name=".ActivityInputCorrectWord"/>
+        <activity android:name=".ActivityHighScore"/>
+        <activity android:name=".ActivityHighScoreCorrectWord"/>
+        <activity android:name=".ActivityHighScoreEnglishQuiz"/>
+>>>>>>> 4e002f9328960db898fe4d4fff41f4793b7956ec
 
         <meta-data
             android:name="preloaded_fonts"

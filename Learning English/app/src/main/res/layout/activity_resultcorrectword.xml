@@ -53,7 +53,6 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent"
             android:layout_below="@id/Txt1"
-            android:text="90% Correct"
             android:textStyle="bold"
             android:textSize="30dp"
             android:textColor="#008000"
@@ -65,13 +64,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/TxtPercentCorrectResultCorrectWord"
-            android:text="500"
+            android:textAlignment="textStart"
             android:textStyle="bold"
             android:textSize="40dp"
+            android:layout_centerHorizontal="true"
             android:textColor="@color/black"
-            android:layout_alignLeft="@id/Txt1"
-            android:layout_marginLeft="45dp"
             android:layout_marginTop="10dp"
+            android:layout_marginRight="2dp"
             />
 
         <ImageView
@@ -79,11 +78,10 @@
             android:layout_width="42dp"
             android:layout_height="40dp"
             android:layout_below="@id/TxtPercentCorrectResultCorrectWord"
-            android:layout_toRightOf="@id/TxtTotalStar"
             android:layout_alignBottom="@id/TxtTotalStar"
             android:src="@drawable/star"
-            android:layout_marginLeft="2dp"
             android:layout_marginTop="6dp"
+            android:layout_toRightOf="@id/TxtTotalStar"
             />
 
         <TextView

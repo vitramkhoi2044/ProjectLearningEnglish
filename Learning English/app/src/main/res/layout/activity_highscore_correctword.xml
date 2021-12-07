@@ -38,7 +38,7 @@
 
         <TextView
             android:id="@+id/TxtNameCorrectWordTop1"
-            android:layout_width="wrap_content"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
             android:text="Your Name"
             android:textStyle="bold"
@@ -59,7 +59,7 @@
             android:textColor="@color/white"
             android:layout_toRightOf="@id/TxtNameCorrectWordTop1"
             android:layout_alignBottom="@id/TxtNameCorrectWordTop1"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="5dp"
             />
 
     </RelativeLayout>
@@ -87,7 +87,7 @@
 
         <TextView
             android:id="@+id/TxtNameCorrectWordTop2"
-            android:layout_width="wrap_content"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
             android:text="Your Name"
             android:textStyle="bold"
@@ -108,7 +108,7 @@
             android:textColor="@color/white"
             android:layout_toRightOf="@id/TxtNameCorrectWordTop2"
             android:layout_alignBottom="@id/TxtNameCorrectWordTop2"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="5dp"
             />
 
     </RelativeLayout>
@@ -136,7 +136,7 @@
 
         <TextView
             android:id="@+id/TxtNameCorrectWordTop3"
-            android:layout_width="wrap_content"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
             android:text="Your Name"
             android:textStyle="bold"
@@ -157,7 +157,7 @@
             android:textColor="@color/white"
             android:layout_toRightOf="@id/TxtNameCorrectWordTop3"
             android:layout_alignBottom="@id/TxtNameCorrectWordTop3"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="5dp"
             />
 
     </RelativeLayout>
@@ -185,7 +185,7 @@
 
         <TextView
             android:id="@+id/TxtNameCorrectWordTop4"
-            android:layout_width="wrap_content"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
             android:text="Your Name"
             android:textStyle="bold"
@@ -206,7 +206,7 @@
             android:textColor="@color/white"
             android:layout_toRightOf="@id/TxtNameCorrectWordTop4"
             android:layout_alignBottom="@id/TxtNameCorrectWordTop4"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="5dp"
             />
 
     </RelativeLayout>
@@ -234,7 +234,7 @@
 
         <TextView
             android:id="@+id/TxtNameCorrectWordTop5"
-            android:layout_width="wrap_content"
+            android:layout_width="170dp"
             android:layout_height="wrap_content"
             android:text="Your Name"
             android:textStyle="bold"
@@ -255,7 +255,7 @@
             android:textColor="@color/white"
             android:layout_toRightOf="@id/TxtNameCorrectWordTop5"
             android:layout_alignBottom="@id/TxtNameCorrectWordTop5"
-            android:layout_marginLeft="50dp"
+            android:layout_marginLeft="5dp"
             />
     </RelativeLayout>
 

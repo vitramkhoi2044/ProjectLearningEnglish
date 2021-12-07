@@ -12,7 +12,6 @@
         android:layout_width="wrap_content"
         android:layout_height="120dp"
         android:background="@drawable/background__bottom"
-
         />
 
     <TextView
@@ -148,15 +147,15 @@
         android:layout_centerHorizontal="true"
         android:layout_marginLeft="35dp"
         android:layout_marginTop="20dp"
+<<<<<<< HEAD
         android:backgroundTint="@color/black"
         android:textColor="@color/white"
+=======
+        android:backgroundTint="@color/white"
+>>>>>>> 4e002f9328960db898fe4d4fff41f4793b7956ec
         android:text="SUBMIT"
-        android:textSize="20dp" />
-
-
-
-
-
-
+        android:textSize="20dp"
+        android:textColor="@color/black"
+        />
 
 </RelativeLayout>
