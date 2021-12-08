@@ -83,6 +83,7 @@ public class activity_EnglishQuiz extends Activity {
         Bundle packageFromCaller= callerIntent.getBundleExtra("MyInfoEnglishQuiz");
         soCau = packageFromCaller.getString("noQuestion");
         TxtSoCau.setText(pos+1+"/"+soCau);
+        name = packageFromCaller.getString("name");
 
 //        Read Data From database
 
