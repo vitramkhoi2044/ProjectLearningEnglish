@@ -44,8 +44,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         EnterEnglishQuiz = (Button)findViewById(R.id.BtnEnglishQuiz);
         LOGOUT = (Button)findViewById((R.id.BtnToLogin));
-//        Intent callerIntent=getIntent();
-//        Bundle packageFromCaller= callerIntent.getBundleExtra("loginExtra");
         SharedPreferences sharedPreferences = getSharedPreferences("MyData", Context.MODE_PRIVATE);
         username = sharedPreferences.getString("name", "");
 
@@ -99,18 +97,5 @@ public class MainActivity extends AppCompatActivity {
         });
 
     }
-
-    private void drawPieChartEnglishQuiz(){
-        pieChartView = findViewById(R.id.ChartEnglishQuiz);
-
-        ArrayList pieData = new ArrayList<>();
-        pieData.add(new SliceValue(9, Color.BLUE));
-        pieData.add(new SliceValue(1, Color.RED));
-
-        PieChartData pieChartData = new PieChartData(pieData);
-        pieChartData.setHasCenterCircle(true).setCenterText1("9/10").setCenterText1FontSize(27).setCenterText1Color(Color.parseColor("#000000"));
-        pieChartView.setPieChartData(pieChartData);
-    }
-
 
 }

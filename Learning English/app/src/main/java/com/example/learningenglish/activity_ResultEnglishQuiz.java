@@ -28,8 +28,7 @@ public class activity_ResultEnglishQuiz extends Activity {
     int ketQua = 0;
     int soCau = 0;
     String Name;
-    ArrayList<HighScoreQuiz> Quizhighscore = new ArrayList<>();
-    int Score;
+    ArrayList<HighScoreQuiz> listHighScore = new ArrayList<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,13 +45,12 @@ public class activity_ResultEnglishQuiz extends Activity {
         drawPieChartEnglishQuiz(kq, ketQua, soCau);
         percent = (TextView) findViewById(R.id.TxtPercentCorrectResultEnglishQuiz);
         percent.setText((int)percentCorrect + "% correct");
+        runQuizHighScore();
         BT = (Button)findViewById(R.id.BtnBackResultEnglishQuiz);
         BT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(activity_ResultEnglishQuiz.this, MainActivity.class);
-                startActivity(intent);
-
+                finish();
             }
         });
 
@@ -68,57 +66,54 @@ public class activity_ResultEnglishQuiz extends Activity {
         pieChartData.setHasCenterCircle(true).setCenterText1(txt).setCenterText1FontSize(27).setCenterText1Color(Color.parseColor("#000000"));
         pieChartView.setPieChartData(pieChartData);
     }
-
-    private void saveHighscore(){
-        SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase("data/data/com.example.learningenglish/databases/LearngingEnglish.db", null);
-        for (int i=0;i<5;i++){
-            db.execSQL("INSERT INTO HighScoreEnglishQuiz(Top,Name,SCore) VALUES (?,?,?)",
-                    new String[]{(i+1)+"",Quizhighscore.get(i).getName(),Quizhighscore.get(i).getScore()+""});
+    private void saveHighScoreToSQLite(){
+        SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase("/data/data/com.example.learningenglish/databases/LearningEnglish.db",null);
+        for(int i=0 ; i<5;i++){
+            db.execSQL("INSERT INTO HighScoreEnglishQuiz(Top,Name,Score)VALUES(?,?,?)",new String[]{i+1+"",listHighScore.get(i).getName(),listHighScore.get(i).getScore()+""});
         }
         db.close();
     }
 
-    private void readHighScore(){
-        SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase("data/data/com.example.learningenglish/databases/LearngingEnglish.db", null);
+    private void readHighScoreFromSQLite(){
+        SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase("/data/data/com.example.learningenglish/databases/LearningEnglish.db",null);
         Cursor cursor = db.rawQuery("SELECT * FROM HighScoreEnglishQuiz", null);
         cursor.moveToFirst();
         while (!cursor.isAfterLast()){
             String name = cursor.getString(1);
             int score = cursor.getInt(2);
-            Quizhighscore.add(new HighScoreQuiz(name,score));
+            listHighScore.add(new HighScoreQuiz(name,score));
             cursor.moveToNext();
         }
         db.close();
     }
 
-    private void deleteHighScore(){
-        SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase("data/data/com.example.learningenglish/databases/LearngingEnglish.db", null);
-        for (int i=1;i<=5;i++){
+    private void deleteHighScoreFromSQLite(){
+        SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase("/data/data/com.example.learningenglish/databases/LearningEnglish.db",null);
+        for(int i=1 ; i<=5;i++){
             db.execSQL("DELETE FROM HighScoreEnglishQuiz WHERE Top = ?",new String[]{i+""});
         }
         db.close();
     }
 
-    private void sortHighScore(){
-        for (int i=0;i<Quizhighscore.size()-1;i++){
-            for (int j=Quizhighscore.size()-1;j>1;j--){
-                if (Quizhighscore.get(j).getScore()>Quizhighscore.get(j-1).getScore()){
-                    HighScoreQuiz tmp = Quizhighscore.get(j);
-                    Quizhighscore.set(j,Quizhighscore.get(j-1));
-                    Quizhighscore.set(j-1,tmp);
+    private void sortListHighScore(){
+        for(int i =0; i<listHighScore.size()-1;i++){
+            for(int j = listHighScore.size()-1;j>i;j--){
+                if(listHighScore.get(j).getScore()>listHighScore.get(j-1).getScore()){
+                    HighScoreQuiz tmp = listHighScore.get(j);
+                    listHighScore.set(j,listHighScore.get(j-1));
+                    listHighScore.set(j-1,tmp);
                 }
             }
         }
     }
-
     private void runQuizHighScore(){
-        readHighScore();
-        if (Score > Quizhighscore.get(Quizhighscore.size()-1).Score){
-            Quizhighscore.add(new HighScoreQuiz(Name,Score));
-            sortHighScore();
-            Quizhighscore.remove(Quizhighscore.size()-1);
-            deleteHighScore();
-            saveHighscore();
+        readHighScoreFromSQLite();
+        if (ketQua > listHighScore.get(listHighScore.size()-1).getScore()){
+            listHighScore.add(new HighScoreQuiz(Name,ketQua));
+            sortListHighScore();
+            listHighScore.remove(listHighScore.size()-1);
+            deleteHighScoreFromSQLite();
+            saveHighScoreToSQLite();
         }
     }
 }

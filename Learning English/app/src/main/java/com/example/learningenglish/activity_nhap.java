@@ -37,30 +37,38 @@ import javax.xml.parsers.ParserConfigurationException;
 public class activity_nhap extends Activity {
     Button BT1;
     EditText Name, NumberOfQuestions;
-    String playerName;
-    String noQuestion;
-    int finalNoQuestion ;
+    TextView TxtWarning;
+
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nhap);
         BT1 = (Button)findViewById(R.id.BtnPlayEnglishQuiz);
         Name = (EditText) findViewById(R.id.EdtPlayerName);
+        TxtWarning = (TextView)findViewById(R.id.TxtWarning);
         NumberOfQuestions = (EditText) findViewById(R.id.EdtTheNumber);
 
-        playerName = Name.getText().toString();
-        noQuestion = NumberOfQuestions.getText().toString();
-//        finalNoQuestion = Integer.parseInt(noQuestion);
         BT1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(activity_nhap.this, activity_EnglishQuiz.class);
+                if(Integer.parseInt(NumberOfQuestions.getText().toString()) >= 5 && Integer.parseInt(NumberOfQuestions.getText().toString()) <= 10) {
 
-                Bundle bundle = new Bundle();
-                bundle.putString("name", Name.getText().toString());
-                bundle.putString("noQuestion", NumberOfQuestions.getText().toString());
-                intent.putExtra("MyInfoEnglishQuiz", bundle);
-                startActivity(intent);
-                Log.v("EditText", NumberOfQuestions.getText().toString());
+                    Intent intent = new Intent(activity_nhap.this, activity_EnglishQuiz.class);
+
+                    Bundle bundle = new Bundle();
+                    bundle.putString("name", Name.getText().toString());
+                    bundle.putString("noQuestion", NumberOfQuestions.getText().toString());
+                    intent.putExtra("MyInfoEnglishQuiz", bundle);
+                    startActivity(intent);
+                    Log.v("EditText", NumberOfQuestions.getText().toString());
+
+
+                } else{
+
+                    NumberOfQuestions.setText("");
+                    TxtWarning.setText("Only input from 5 to 10");
+                    Name.setText(Name.getText().toString());
+                }
+                finish();
             }
         });
     }

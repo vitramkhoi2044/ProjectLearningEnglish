@@ -7,7 +7,7 @@
     <RelativeLayout
         android:id="@+id/TxtLayoutCenter"
         android:layout_width="400dp"
-        android:layout_height="400dp"
+        android:layout_height="450dp"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
 
@@ -74,10 +74,18 @@
             android:textStyle="bold"
             android:textColor="@color/black"
             android:backgroundTint="#0A83E3"
-
-        >
-
-        </Button>
+            />
+            <TextView
+                android:id="@+id/TxtWarning"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="25dp"
+                android:textAlignment="center"
+                android:layout_below="@+id/BtnPlayEnglishQuiz"
+                android:textColor="#ff0000"
+                android:textStyle="bold"
+                android:layout_marginTop="20dp"
+                />
 
     </RelativeLayout>
 
