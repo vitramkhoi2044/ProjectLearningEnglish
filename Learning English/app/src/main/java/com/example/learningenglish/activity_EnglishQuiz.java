@@ -21,6 +21,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Random;
 import java.util.Set;
+import java.util.jar.Attributes;
 
 class QuestionNare
 {
@@ -53,6 +54,7 @@ public class activity_EnglishQuiz extends Activity {
     Chronometer chronometer;
     int counter = 20;
     TextView TxtSoCau;
+    String name;
 
 
     int pos=0;
@@ -129,6 +131,7 @@ public class activity_EnglishQuiz extends Activity {
                         Bundle bundle = new Bundle();
                         bundle.putInt("KQ", kq);
                         bundle.putInt("Socau", pos);
+                        bundle.putString("name", name);
                         intent.putExtra("MyPackage", bundle);
                         startActivity(intent);
                         finish();
@@ -165,6 +168,7 @@ public class activity_EnglishQuiz extends Activity {
                                 Bundle bundle = new Bundle();
                                 bundle.putInt("KQ", kq);
                                 bundle.putInt("Socau", pos);
+                                bundle.putString("name", name);
                                 intent.putExtra("MyPackage", bundle);
                                 startActivity(intent);
                                 finish();
