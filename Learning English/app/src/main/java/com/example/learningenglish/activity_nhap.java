@@ -60,15 +60,13 @@ public class activity_nhap extends Activity {
                     intent.putExtra("MyInfoEnglishQuiz", bundle);
                     startActivity(intent);
                     Log.v("EditText", NumberOfQuestions.getText().toString());
-
-
+                    finish();
                 } else{
-
                     NumberOfQuestions.setText("");
                     TxtWarning.setText("Only input from 5 to 10");
                     Name.setText(Name.getText().toString());
                 }
-                finish();
+
             }
         });
     }
