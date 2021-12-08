@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     protected Button EnterEnglishQuiz, LOGOUT;
     private PieChartView pieChartView;
     TextView displayUserName;
+
     String username;
     private Button BtnWord,BtnBack,BtnHighScore;
     @Override
@@ -60,6 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
+
         LOGOUT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -71,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-      
+
         BtnWord = (Button)findViewById(R.id.BtnWord);
         BtnHighScore = (Button)findViewById(R.id.BtnHighscore);
         BtnBack = (Button)findViewById(R.id.BtnBack);

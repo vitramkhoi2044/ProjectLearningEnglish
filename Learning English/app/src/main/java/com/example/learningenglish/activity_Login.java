@@ -11,6 +11,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -22,6 +23,7 @@ public class activity_Login extends AppCompatActivity {
     EditText username,password;
     Button loginBtn;
     private FirebaseAuth mAuth;
+    TextView createAccount;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +32,16 @@ public class activity_Login extends AppCompatActivity {
         username = (EditText) findViewById(R.id.EditLoginEmail);
         password = findViewById((R.id.EditLoginPwd));
         loginBtn = findViewById((R.id.BtnToLogin));
+        createAccount = (TextView) findViewById(R.id.textAlreadyHaveAccount);
+        createAccount.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(activity_Login.this, activity_Register.class);
+                startActivity(intent);
+                finish();
+            }
+        });
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
