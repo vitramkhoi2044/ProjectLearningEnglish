@@ -1,10 +1,10 @@
 package com.example.learningenglish;
 
 public class QuestionNare {
-    public int ID;
-    public String Q;
-    public String AnswerA, AnswerB, AnswerC, AnswerD, Answer;
-    public String Image;
+    protected int ID;
+    protected String Q;
+    protected String AnswerA, AnswerB, AnswerC, AnswerD, Answer;
+    protected String Image;
 
     public QuestionNare(int ID, String Q, String AnswerA,String AnswerB,String AnswerC,String AnswerD,String Answer, String Image ){
         this.ID = ID;

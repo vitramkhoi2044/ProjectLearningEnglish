@@ -21,14 +21,14 @@ import lecho.lib.hellocharts.view.PieChartView;
 
 
 public class activity_ResultEnglishQuiz extends Activity {
-    String kq;
+    private String kq;
     private PieChartView pieChartView;
-    Button BT;
-    TextView percent;
-    int ketQua = 0;
-    int soCau = 0;
-    String Name;
-    ArrayList<HighScoreQuiz> listHighScore = new ArrayList<>();
+    private Button BT;
+    private TextView percent;
+    private int ketQua = 0;
+    private int soCau = 0;
+    private String Name;
+    private ArrayList<HighScoreQuiz> listHighScore = new ArrayList<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -55,7 +55,7 @@ public class activity_ResultEnglishQuiz extends Activity {
         });
 
     }
-    private void drawPieChartEnglishQuiz(String txt, int soCauDung, int soCau){
+    public void drawPieChartEnglishQuiz(String txt, int soCauDung, int soCau){
         pieChartView = findViewById(R.id.ChartEnglishQuiz);
 
         ArrayList pieData = new ArrayList<>();
@@ -66,7 +66,7 @@ public class activity_ResultEnglishQuiz extends Activity {
         pieChartData.setHasCenterCircle(true).setCenterText1(txt).setCenterText1FontSize(27).setCenterText1Color(Color.parseColor("#000000"));
         pieChartView.setPieChartData(pieChartData);
     }
-    private void saveHighScoreToSQLite(){
+    public void saveHighScoreToSQLite(){
         SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase("/data/data/com.example.learningenglish/databases/LearningEnglish.db",null);
         for(int i=0 ; i<5;i++){
             db.execSQL("INSERT INTO HighScoreEnglishQuiz(Top,Name,Score)VALUES(?,?,?)",new String[]{i+1+"",listHighScore.get(i).getName(),listHighScore.get(i).getScore()+""});
@@ -74,7 +74,7 @@ public class activity_ResultEnglishQuiz extends Activity {
         db.close();
     }
 
-    private void readHighScoreFromSQLite(){
+    public void readHighScoreFromSQLite(){
         SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase("/data/data/com.example.learningenglish/databases/LearningEnglish.db",null);
         Cursor cursor = db.rawQuery("SELECT * FROM HighScoreEnglishQuiz", null);
         cursor.moveToFirst();
@@ -87,7 +87,7 @@ public class activity_ResultEnglishQuiz extends Activity {
         db.close();
     }
 
-    private void deleteHighScoreFromSQLite(){
+    public void deleteHighScoreFromSQLite(){
         SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase("/data/data/com.example.learningenglish/databases/LearningEnglish.db",null);
         for(int i=1 ; i<=5;i++){
             db.execSQL("DELETE FROM HighScoreEnglishQuiz WHERE Top = ?",new String[]{i+""});
@@ -95,7 +95,7 @@ public class activity_ResultEnglishQuiz extends Activity {
         db.close();
     }
 
-    private void sortListHighScore(){
+    public void sortListHighScore(){
         for(int i =0; i<listHighScore.size()-1;i++){
             for(int j = listHighScore.size()-1;j>i;j--){
                 if(listHighScore.get(j).getScore()>listHighScore.get(j-1).getScore()){
@@ -106,7 +106,7 @@ public class activity_ResultEnglishQuiz extends Activity {
             }
         }
     }
-    private void runQuizHighScore(){
+    public void runQuizHighScore(){
         readHighScoreFromSQLite();
         if (ketQua > listHighScore.get(listHighScore.size()-1).getScore()){
             listHighScore.add(new HighScoreQuiz(Name,ketQua));

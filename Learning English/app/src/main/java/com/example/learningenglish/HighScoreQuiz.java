@@ -1,8 +1,6 @@
 package com.example.learningenglish;
 
-import android.app.Activity;
-
-public class HighScoreQuiz extends Activity {
+public class HighScoreQuiz {
     protected String Name;
     protected int Score;
 

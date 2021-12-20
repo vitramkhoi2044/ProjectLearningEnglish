@@ -24,24 +24,24 @@ import java.util.Set;
 import java.util.jar.Attributes;
 
 public class activity_EnglishQuiz extends Activity {
-    TextView Cauhoi;
-    RadioGroup RG;
-    Button BT;
-    RadioButton A,B,C,D;
-    ImageView Img;
-    Chronometer chronometer;
-    int counter = 20;
-    TextView TxtSoCau;
-    String name;
+    private TextView Cauhoi;
+    private RadioGroup RG;
+    private Button BT;
+    private RadioButton A,B,C,D;
+    private ImageView Img;
+    private Chronometer chronometer;
+    private int counter = 20;
+    private TextView TxtSoCau;
+    private String name;
 
 
-    int pos=0;
-    int kq=0;
-    int size;
-    String soCau;
+    private int pos=0;
+    private int kq=0;
+    private int size;
+    private String soCau;
 
-    ArrayList<QuestionNare> L = new ArrayList();
-    Set<Integer> H = new LinkedHashSet<Integer>();
+    private ArrayList<QuestionNare> L = new ArrayList();
+    private Set<Integer> H = new LinkedHashSet<Integer>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -167,7 +167,7 @@ public class activity_EnglishQuiz extends Activity {
 
     }
 
-    void Display(int i)
+    public void Display(int i)
     {
         Cauhoi.setText(L.get(i).Q);
         A.setText(L.get(i).AnswerA);
@@ -185,6 +185,7 @@ public class activity_EnglishQuiz extends Activity {
 
         RG.clearCheck();
     }
+
     public void ReadDataEnglishQuiz()
     {
         SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase("/data/data/com.example.learningenglish/databases/LearningEnglish.db", null);

@@ -13,9 +13,9 @@ import androidx.annotation.Nullable;
 import java.util.ArrayList;
 
 public class ActivityHighScoreEnglishQuiz extends Activity {
-    protected TextView Txtname1,Txtname2,Txtname3,Txtname4,Txtname5,Txtscore1,Txtscore2,Txtscore3,Txtscore4,Txtscore5;
-    protected Button Bt;
-    protected ArrayList<HighScoreQuiz> listHighScore = new ArrayList<>();
+    private TextView Txtname1,Txtname2,Txtname3,Txtname4,Txtname5,Txtscore1,Txtscore2,Txtscore3,Txtscore4,Txtscore5;
+    private Button Bt;
+    private ArrayList<HighScoreQuiz> listHighScore = new ArrayList<>();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {

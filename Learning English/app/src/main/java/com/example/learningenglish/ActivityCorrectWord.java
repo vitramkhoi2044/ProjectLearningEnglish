@@ -288,7 +288,7 @@ public class ActivityCorrectWord extends Activity {
         cursor.close();
     }
 
-    public String randomCharacters(String a, ArrayList<Word> List,int pos){
+    public String randomCharacters(String a, ArrayList<Word> List, int pos){
         String []b;
         b=a.split(" ");
         String characters =""+ (List.get(pos).word);

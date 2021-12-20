@@ -29,11 +29,9 @@ import lecho.lib.hellocharts.model.SliceValue;
 import lecho.lib.hellocharts.view.PieChartView;
 
 public class MainActivity extends AppCompatActivity {
-    protected Button EnterEnglishQuiz, LOGOUT;
-    private PieChartView pieChartView;
-    TextView displayUserName;
-
-    String username;
+    private Button EnterEnglishQuiz, LOGOUT;
+    private TextView displayUserName;
+    private String username;
     private Button BtnWord,BtnBack,BtnHighScore;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

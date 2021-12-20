@@ -50,11 +50,6 @@ public class ActivityHighScore extends Activity {
                 finish();
             }
         });
-
-
-
     }
-
-
 
 }

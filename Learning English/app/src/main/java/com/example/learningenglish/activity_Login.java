@@ -20,10 +20,10 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class activity_Login extends AppCompatActivity {
-    EditText username,password;
-    Button loginBtn;
+    private EditText username,password;
+    private Button loginBtn;
     private FirebaseAuth mAuth;
-    TextView createAccount;
+    private TextView createAccount;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

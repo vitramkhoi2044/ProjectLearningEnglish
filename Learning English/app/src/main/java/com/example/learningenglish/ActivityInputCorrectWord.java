@@ -10,8 +10,8 @@ import android.widget.EditText;
 import androidx.annotation.Nullable;
 
 public class ActivityInputCorrectWord extends Activity {
-    EditText edtName;
-    Button btn;
+    private EditText edtName;
+    private Button btn;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

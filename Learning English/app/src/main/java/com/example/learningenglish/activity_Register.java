@@ -19,9 +19,9 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class activity_Register extends AppCompatActivity {
-    EditText registerEmail, registerPwd, registerConfirmPwd;
-    Button signUpBtn;
-    TextView BackToLogin;
+    private EditText registerEmail, registerPwd, registerConfirmPwd;
+    private Button signUpBtn;
+    private TextView BackToLogin;
     private FirebaseAuth fAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {

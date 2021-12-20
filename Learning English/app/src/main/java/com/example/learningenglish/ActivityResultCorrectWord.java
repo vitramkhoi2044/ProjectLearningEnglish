@@ -55,7 +55,7 @@ public class ActivityResultCorrectWord extends Activity {
         });
     }
 
-    private void drawPieChartCorrectWord(int dung,int sai,int tong){
+    public void drawPieChartCorrectWord(int dung,int sai,int tong){
         pieChartView = findViewById(R.id.ChartCorrectWord);
 
         ArrayList pieData = new ArrayList<>();
@@ -67,7 +67,7 @@ public class ActivityResultCorrectWord extends Activity {
         pieChartView.setPieChartData(pieChartData);
     }
 
-    private void saveHighScoreToSQLite(){
+    public void saveHighScoreToSQLite(){
         SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase("/data/data/com.example.learningenglish/databases/LearningEnglish.db",null);
         for(int i=0 ; i<5;i++){
             db.execSQL("INSERT INTO HighScoreCorrectWord(Top,Name,Star)VALUES(?,?,?)",new String[]{i+1+"",listHighScore.get(i).getName(),listHighScore.get(i).getStar()+""});
@@ -75,7 +75,7 @@ public class ActivityResultCorrectWord extends Activity {
         db.close();
     }
 
-    private void readHighScoreFromSQLite(){
+    public void readHighScoreFromSQLite(){
         SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase("/data/data/com.example.learningenglish/databases/LearningEnglish.db",null);
         Cursor cursor = db.rawQuery("SELECT * FROM HighScoreCorrectWord", null);
         cursor.moveToFirst();
@@ -88,7 +88,7 @@ public class ActivityResultCorrectWord extends Activity {
         db.close();
     }
 
-    private void deleteHighScoreFromSQLite(){
+    public void deleteHighScoreFromSQLite(){
         SQLiteDatabase db = SQLiteDatabase.openOrCreateDatabase("/data/data/com.example.learningenglish/databases/LearningEnglish.db",null);
         for(int i=1 ; i<=5;i++){
             db.execSQL("DELETE FROM HighScoreCorrectWord WHERE Top = ?",new String[]{i+""});
@@ -96,7 +96,7 @@ public class ActivityResultCorrectWord extends Activity {
         db.close();
     }
 
-    private void sortListHighScore(){
+    public void sortListHighScore(){
         for(int i =0; i<listHighScore.size()-1;i++){
             for(int j = listHighScore.size()-1;j>i;j--){
                 if(listHighScore.get(j).getStar()>listHighScore.get(j-1).getStar()){
@@ -108,7 +108,7 @@ public class ActivityResultCorrectWord extends Activity {
         }
     }
 
-    private void runHighScore(){
+    public void runHighScore(){
         readHighScoreFromSQLite();
         if(star>listHighScore.get(listHighScore.size()-1).star){
             listHighScore.add(new HighScoreCorrectWord(star,name));

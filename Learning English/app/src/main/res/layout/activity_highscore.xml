@@ -63,7 +63,7 @@
             android:layout_height="60dp"
             android:layout_below="@id/RGHighScore"
             android:layout_marginTop="25dp"
-            android:text="see"
+            android:text="View"
             android:textSize="25dp"
             android:textColor="@color/black"
             android:backgroundTint="@color/white"

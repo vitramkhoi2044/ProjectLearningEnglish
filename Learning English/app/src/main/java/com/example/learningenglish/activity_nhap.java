@@ -35,9 +35,9 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 public class activity_nhap extends Activity {
-    Button BT1;
-    EditText Name, NumberOfQuestions;
-    TextView TxtWarning;
+    private Button BT1;
+    private EditText Name, NumberOfQuestions;
+    private TextView TxtWarning;
 
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
