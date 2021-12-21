@@ -631,5 +631,4 @@ public class ActivityCorrectWord extends Activity {
     public void doStop(){
         chronometer.stop();
     }
-
 }

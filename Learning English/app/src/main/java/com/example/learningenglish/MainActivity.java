@@ -12,6 +12,7 @@ import android.content.SharedPreferences;
 import android.content.Intent;
 
 import android.graphics.Color;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -33,19 +34,18 @@ public class MainActivity extends AppCompatActivity {
     private TextView displayUserName;
     private String username;
     private Button BtnWord,BtnBack,BtnHighScore;
+    private MediaPlayer song;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-
-
         setContentView(R.layout.activity_main);
+        playMusic();
+
         EnterEnglishQuiz = (Button)findViewById(R.id.BtnEnglishQuiz);
         LOGOUT = (Button)findViewById((R.id.BtnToLogin));
         SharedPreferences sharedPreferences = getSharedPreferences("MyData", Context.MODE_PRIVATE);
         username = sharedPreferences.getString("name", "");
-
-
         displayUserName = findViewById((R.id.TextUserName));
         displayUserName.setText("Hi" + " " + username);
 
@@ -54,21 +54,19 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, activity_nhap.class);
                 startActivity(intent);
-
             }
         });
 
         LOGOUT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                stopMusic();
                 FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(MainActivity.this, activity_Login.class);
                 startActivity(intent);
                 finish();
             }
         });
-
-
 
         BtnWord = (Button)findViewById(R.id.BtnWord);
         BtnHighScore = (Button)findViewById(R.id.BtnHighscore);
@@ -90,10 +88,25 @@ public class MainActivity extends AppCompatActivity {
         BtnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                stopMusic();
                 finish();
             }
         });
 
+    }
+
+    public void playMusic(){
+        if(song==null){
+            song = MediaPlayer.create(MainActivity.this,R.raw.music);
+            song.setLooping(true);
+            song.start();
+        }
+    }
+    public void stopMusic(){
+        if(song.isPlaying()){
+            song.release();
+            song = null;
+        }
     }
 
 }
