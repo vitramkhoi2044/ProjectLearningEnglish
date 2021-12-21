@@ -28,27 +28,13 @@
         android:layout_marginRight="5dp"
         />
 
-    <TextView
-        android:id="@+id/TxtTimer"
-        android:layout_width="20dp"
-        android:layout_height="30dp"
-        android:fontFamily="@font/roboto_medium"
-        android:textAlignment="textStart"
-        android:textColor="@android:color/white"
-        android:textColorHighlight="@android:color/white"
-        android:textColorLink="@android:color/white"
-        android:textSize="20dp"
-        app:drawableLeftCompat="@android:drawable/ic_lock_idle_alarm"
-        app:drawableTint="@color/white"
-        android:layout_marginLeft="5dp"/>
-
     <Chronometer
         android:textColor="@color/white"
         android:format="20"
         android:id="@+id/ChronoTimer"
-        android:layout_toRightOf="@+id/TxtTimer"
-        android:layout_width="50dp"
-        android:layout_height="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
         android:textSize="20dp"
         android:countDown="true"/>
 

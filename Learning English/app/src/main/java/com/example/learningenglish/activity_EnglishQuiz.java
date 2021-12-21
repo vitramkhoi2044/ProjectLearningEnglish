@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -68,7 +69,7 @@ public class activity_EnglishQuiz extends Activity {
         ReadDataEnglishQuiz();
         size = L.size();
 
-        //        Handle Random Numbers, use Hash to put everything in order
+        //  Handle Random Numbers, use Hash to put everything in order
         Random rng = new Random();
         while (H.size() < Integer.parseInt(soCau))
         {
@@ -89,18 +90,58 @@ public class activity_EnglishQuiz extends Activity {
                     int idCheck = RG.getCheckedRadioButtonId();
                     switch (idCheck)
                     {
-                        case R.id.RB_AnswerA:
-                            if (L.get(Q.get(pos)) .Answer.compareTo("A")==0) kq = kq+1;
+                        case R.id.RB_AnswerA:{
+                            if (L.get(Q.get(pos)) .Answer.compareTo("A")==0){
+                                MediaPlayer song = MediaPlayer.create(activity_EnglishQuiz.this,R.raw.correct);
+                                song.start();
+                                kq = kq+1;
+                            }
+                            else{
+                                MediaPlayer song = MediaPlayer.create(activity_EnglishQuiz.this,R.raw.wrong);
+                                song.start();
+                            }
                             break;
-                        case R.id.RB_AnswerB:
-                            if (L.get(Q.get(pos)) .Answer.compareTo("B")==0) kq = kq+1;
+                        }
+                        case R.id.RB_AnswerB:{
+                            if (L.get(Q.get(pos)) .Answer.compareTo("B")==0){
+                                MediaPlayer song = MediaPlayer.create(activity_EnglishQuiz.this,R.raw.correct);
+                                song.start();
+                                kq = kq+1;
+                            }
+                            else{
+                                MediaPlayer song = MediaPlayer.create(activity_EnglishQuiz.this,R.raw.wrong);
+                                song.start();
+                            }
                             break;
-                        case R.id.RB_AnswerC:
-                            if (L.get(Q.get(pos)) .Answer.compareTo("C")==0) kq = kq+1;
+                        }
+                        case R.id.RB_AnswerC:{
+                            if (L.get(Q.get(pos)) .Answer.compareTo("C")==0) {
+                                MediaPlayer song = MediaPlayer.create(activity_EnglishQuiz.this,R.raw.correct);
+                                song.start();
+                                kq = kq+1;
+                            }
+                            else{
+                                MediaPlayer song = MediaPlayer.create(activity_EnglishQuiz.this,R.raw.wrong);
+                                song.start();
+                            }
                             break;
-                        case R.id.RB_AnswerD:
-                            if (L.get(Q.get(pos)) .Answer.compareTo("D")==0) kq = kq+1;
+                        }
+                        case R.id.RB_AnswerD:{
+                            if (L.get(Q.get(pos)) .Answer.compareTo("D")==0){
+                                MediaPlayer song = MediaPlayer.create(activity_EnglishQuiz.this,R.raw.correct);
+                                song.start();
+                                kq = kq+1;
+                            }
+                            else{
+                                MediaPlayer song = MediaPlayer.create(activity_EnglishQuiz.this,R.raw.wrong);
+                                song.start();
+                            }
                             break;
+                        }
+                        default:{
+                            MediaPlayer song = MediaPlayer.create(activity_EnglishQuiz.this,R.raw.wrong);
+                            song.start();
+                        }
                     }
                     pos++;
 
@@ -126,18 +167,58 @@ public class activity_EnglishQuiz extends Activity {
                             int idCheck = RG.getCheckedRadioButtonId();
                             switch (idCheck)
                             {
-                                case R.id.RB_AnswerA:
-                                    if (L.get(Q.get(pos)) .Answer.compareTo("A")==0) kq = kq+1;
+                                case R.id.RB_AnswerA:{
+                                    if (L.get(Q.get(pos)) .Answer.compareTo("A")==0){
+                                        MediaPlayer song = MediaPlayer.create(activity_EnglishQuiz.this,R.raw.correct);
+                                        song.start();
+                                        kq = kq+1;
+                                    }
+                                    else{
+                                        MediaPlayer song = MediaPlayer.create(activity_EnglishQuiz.this,R.raw.wrong);
+                                        song.start();
+                                    }
                                     break;
-                                case R.id.RB_AnswerB:
-                                    if (L.get(Q.get(pos)) .Answer.compareTo("B")==0) kq = kq+1;
+                                }
+                                case R.id.RB_AnswerB:{
+                                    if (L.get(Q.get(pos)) .Answer.compareTo("B")==0){
+                                        MediaPlayer song = MediaPlayer.create(activity_EnglishQuiz.this,R.raw.correct);
+                                        song.start();
+                                        kq = kq+1;
+                                    }
+                                    else{
+                                        MediaPlayer song = MediaPlayer.create(activity_EnglishQuiz.this,R.raw.wrong);
+                                        song.start();
+                                    }
                                     break;
-                                case R.id.RB_AnswerC:
-                                    if (L.get(Q.get(pos)) .Answer.compareTo("C")==0) kq = kq+1;
+                                }
+                                case R.id.RB_AnswerC:{
+                                    if (L.get(Q.get(pos)) .Answer.compareTo("C")==0) {
+                                        MediaPlayer song = MediaPlayer.create(activity_EnglishQuiz.this,R.raw.correct);
+                                        song.start();
+                                        kq = kq+1;
+                                    }
+                                    else{
+                                        MediaPlayer song = MediaPlayer.create(activity_EnglishQuiz.this,R.raw.wrong);
+                                        song.start();
+                                    }
                                     break;
-                                case R.id.RB_AnswerD:
-                                    if (L.get(Q.get(pos)) .Answer.compareTo("D")==0) kq = kq+1;
+                                }
+                                case R.id.RB_AnswerD:{
+                                    if (L.get(Q.get(pos)) .Answer.compareTo("D")==0){
+                                        MediaPlayer song = MediaPlayer.create(activity_EnglishQuiz.this,R.raw.correct);
+                                        song.start();
+                                        kq = kq+1;
+                                    }
+                                    else{
+                                        MediaPlayer song = MediaPlayer.create(activity_EnglishQuiz.this,R.raw.wrong);
+                                        song.start();
+                                    }
                                     break;
+                                }
+                                default:{
+                                    MediaPlayer song = MediaPlayer.create(activity_EnglishQuiz.this,R.raw.wrong);
+                                    song.start();
+                                }
                             }
                             pos++;
 
