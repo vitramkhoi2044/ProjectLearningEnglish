@@ -57,7 +57,7 @@
         <TextView
             android:id="@+id/TxtCauhoi"
             android:layout_width="300dp"
-            android:layout_height="50dp"
+            android:layout_height="80dp"
             android:layout_below="@+id/TxtQuizImage"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
