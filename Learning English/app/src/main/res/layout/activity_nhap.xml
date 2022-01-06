@@ -7,7 +7,7 @@
     <RelativeLayout
         android:id="@+id/TxtLayoutCenter"
         android:layout_width="400dp"
-        android:layout_height="450dp"
+        android:layout_height="500dp"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
 
@@ -62,11 +62,26 @@
             android:textSize="30dp"
             android:inputType="number"
             android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/BtnEnglishQuizTutorial"
+            android:layout_width="200dp"
+            android:layout_height="70dp"
+            android:layout_below="@id/EdtTheNumber"
+            android:layout_marginTop="25dp"
+            android:text="Tutorial"
+            android:textSize="25dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:backgroundTint="#0A83E3"
+            android:layout_centerHorizontal="true"
+            />
+
         <Button
             android:id="@+id/BtnPlayEnglishQuiz"
             android:layout_width="200dp"
             android:layout_height="70dp"
-            android:layout_below="@+id/EdtTheNumber"
+            android:layout_below="@+id/BtnEnglishQuizTutorial"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:text="Start"

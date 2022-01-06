@@ -35,6 +35,8 @@
         <activity android:name=".ActivityHighScore"/>
         <activity android:name=".ActivityHighScoreCorrectWord"/>
         <activity android:name=".ActivityHighScoreEnglishQuiz"/>
+        <activity android:name=".ActivityTutorialCorrectWord"/>
+        <activity android:name=".ActivityTutorialEnglishQuiz"/>
 
 
         <meta-data

@@ -13,7 +13,7 @@ import androidx.annotation.Nullable;
 
 public class ActivityInputCorrectWord extends Activity {
     private EditText edtName;
-    private Button btn;
+    private Button btn,btn1;
     private TextView txtWarning;
 
     @Override
@@ -22,6 +22,7 @@ public class ActivityInputCorrectWord extends Activity {
         setContentView(R.layout.activity_inputname_correctword);
         edtName = (EditText)findViewById(R.id.EdtNameCorrectWord);
         btn = (Button)findViewById(R.id.BtnPlayCorrectWord);
+        btn1 = (Button)findViewById(R.id.BtnCorrectWordTutorial);
         txtWarning = (TextView)findViewById(R.id.TxtWarningCorrectWord);
 
         btn.setOnClickListener(new View.OnClickListener() {
@@ -40,6 +41,13 @@ public class ActivityInputCorrectWord extends Activity {
                     txtWarning.setText("The name only 10 characters and not empty");
                 }
 
+            }
+        });
+        btn1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ActivityInputCorrectWord.this,ActivityTutorialCorrectWord.class);
+                startActivity(intent);
             }
         });
     }

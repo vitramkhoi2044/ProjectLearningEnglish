@@ -35,7 +35,7 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
 public class activity_nhap extends Activity {
-    private Button BT1;
+    private Button BT1,BTN;
     private EditText Name, NumberOfQuestions;
     private TextView TxtWarning;
 
@@ -43,6 +43,7 @@ public class activity_nhap extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nhap);
         BT1 = (Button)findViewById(R.id.BtnPlayEnglishQuiz);
+        BTN = (Button)findViewById(R.id.BtnEnglishQuizTutorial);
         Name = (EditText) findViewById(R.id.EdtPlayerName);
         TxtWarning = (TextView)findViewById(R.id.TxtWarning);
         NumberOfQuestions = (EditText) findViewById(R.id.EdtTheNumber);
@@ -67,6 +68,13 @@ public class activity_nhap extends Activity {
                     Name.setText(Name.getText().toString());
                 }
 
+            }
+        });
+        BTN.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(activity_nhap.this,ActivityTutorialEnglishQuiz.class);
+                startActivity(intent);
             }
         });
     }

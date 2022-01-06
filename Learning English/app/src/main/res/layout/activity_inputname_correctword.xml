@@ -7,7 +7,7 @@
     <RelativeLayout
         android:id="@+id/TxtLayoutCenter"
         android:layout_width="400dp"
-        android:layout_height="250dp"
+        android:layout_height="350dp"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:background="@drawable/quiz_background"
@@ -40,10 +40,23 @@
             />
 
         <Button
-            android:id="@+id/BtnPlayCorrectWord"
+            android:id="@+id/BtnCorrectWordTutorial"
             android:layout_width="150dp"
             android:layout_height="60dp"
             android:layout_below="@id/EdtNameCorrectWord"
+            android:layout_marginTop="25dp"
+            android:text="Tutorial"
+            android:textSize="20dp"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/white"
+            android:layout_centerHorizontal="true"
+            />
+
+        <Button
+            android:id="@+id/BtnPlayCorrectWord"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_below="@id/BtnCorrectWordTutorial"
             android:layout_marginTop="25dp"
             android:text="start"
             android:textSize="25dp"
