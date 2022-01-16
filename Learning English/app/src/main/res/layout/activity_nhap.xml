@@ -7,7 +7,7 @@
     <RelativeLayout
         android:id="@+id/TxtLayoutCenter"
         android:layout_width="400dp"
-        android:layout_height="500dp"
+        android:layout_height="600dp"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
 
